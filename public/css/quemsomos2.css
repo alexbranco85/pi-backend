@@ -1,0 +1,189 @@
+.nike-rosa {
+    width: 499.34px;
+    height: 499.34px;
+    margin-left: 850px;
+    margin-top: -400px;
+}
+
+.nike-amarelo {
+    width: 768px;
+    height: 768px;
+    margin-left: 800px;
+    margin-top: -200px;
+    margin-bottom: -200px;
+}
+
+.sobreaempresa{
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.section {
+    display: block;
+    
+}
+
+.slide_01 {
+    background-image: url(../img/banner-quem-somos.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.slide .titulo, .slide .subtitulo{
+    color:#000;
+    max-width: 50%;
+}
+.slide .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 560px;
+}
+
+.apresentacao-empresa {
+    display: flex;
+    margin-top: 50px;
+}
+
+.sobre-infos {
+    width: 375px;
+    height: 77px;
+    font-weight: 900;
+}
+
+.apresentacao {
+    display: block;
+    margin-top: -10px;
+    background: linear-gradient(180deg, #F6F6F6 0%, #D6D6D6 100%);
+}
+
+.segundaapres{
+    background-image: url(../img/MartaCopaItalia1.png); background-repeat: no-repeat;
+    background-position: top center;
+    display: flex;
+    flex-direction: column;
+    padding: 230px 0;
+}
+
+
+.apresentacao-numeros {
+    margin-top: 0px;
+    display: block;
+}
+
+
+.num-titulo {
+    display: block;
+}
+
+.numeros-titulo {
+    display: flex;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 60px;
+    margin-top: 100px;
+    width: 281px;
+    height: 77px;
+    margin-left: 0px;
+    margin-bottom: -50px;
+}
+
+.numero01, .numero02, .numero03 {
+    font-size: 80px;
+    font-style: normal;
+}
+
+.numeros .word-apart {
+    font-size: 60px;
+    width: 100px;
+}
+
+.numeros span {
+    color: #FF4F4F;
+    font-size: 60px;
+}
+
+.numeros p {
+    font-size: 60px;
+}
+
+.numeros {
+    width: 1200px;
+    padding-bottom: 100px;
+}
+
+.contato-infos {
+    background-image: url(../img/runner.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+
+
+.subtitulo-cidade {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 60px;
+    letter-spacing: 0.05em;
+    margin-top: 50px;
+    margin-left: 80px;
+}
+
+.contatos {
+    width: 773px;
+    height: 84px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 60px;
+    letter-spacing: 0.05em;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-left: 80px;
+}
+
+.apresentacao-empresa{margin-top: 120px;}
+
+
+
+.sobre{height: 500px;}
+.segundaapres .slide{background: transparent;}
+
+.numeros{
+    display: flex;
+    justify-content: center;
+    column-gap: 15px;
+}
+.numeros div{
+    background-color: #FF4F4F;
+    border-radius: 15px;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+}
+
+
+section.aprenumeros h2 {
+    margin-bottom: 0;
+}
+
+.numeros div h2{
+    margin: 0;
+    color:#fff;
+    font-weight: bold;
+    font-size: 48px;
+    padding: 10px 0;
+}
+
+.numeros div h3{
+    margin: 0;
+    padding: 5px 0;
+}
+.contato-infos h2{padding: 0;}
+.contato-infos{padding: 120px 0;}
+.contato-infos .divisor-preto{margin-bottom: 60px;}
+.cidades{display: flex; justify-content: center; column-gap: 2rem;}
+.cidades div{text-align: center;}

@@ -1,0 +1,77 @@
+.indicacao-menu-navbar {background: #F5F5F5; padding: 1px;}
+.indicacao-menu-navbar ul {display: flex; list-style: none}
+.indicacao-menu-navbar ul a {text-decoration: none; padding: 10px;}
+
+
+
+.criarConta{
+    display: flex;
+    column-gap: 1rem;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.container2,.container3{
+    border: 2px black solid;
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 10px;
+    width:80%;
+}
+
+
+.form-header {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-header h1::after {
+    content: '';
+    display: flex;
+    width: 5rem;
+    height: 0.3rem;
+    background-color:white;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.criarConta input{
+    width: 100%;
+    padding: 1rem;
+    border: 1px black solid;
+    border-radius: 10px;
+}
+.criarConta .input-box{
+    margin-bottom: 1rem;
+    
+
+}
+
+.endereco{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 3rem;
+}
+
+.endereco .input-box:first-child{
+width: 70%;
+}
+
+.endereco .input-box:last-child{
+    width: 30%;
+    }
+
+.criarConta label{
+    margin-bottom: 0.2rem;
+    display: block;
+}
+
+.criarConta button {
+    margin-top: 1.5rem;
+    border: 0;
+}
+.button-criarConta {
+    text-align: right;
+}

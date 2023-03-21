@@ -1,0 +1,32 @@
+.carrinho{display: flex; column-gap: 1rem; margin: 3rem auto;}
+.carrinho-produtos, .carrinho-finalizar{border:1px solid #000; border-radius: 15px; padding: 15px;}
+.carrinho-produtos{width: 60%;}
+.carrinho-finalizar{width: 40%;}
+.produtoscarrinho{padding-left: 0; margin-bottom: 0;}
+.produtoscarrinho li{display: flex; column-gap: 15px; border-bottom:1px solid #000; margin-bottom: 20px;}
+.produtoscarrinho li:last-child{border: 0; margin-bottom: 0;}
+.produtoscarrinho .imagem{width: 175px; height: 175px; background: linear-gradient(180deg, #F6F6F6 0%, #D6D6D6 100%); border-radius: 15px; display: flex; align-items: center;}
+.produtoscarrinho li img{width: 100%;}
+.infos-carrinho .nome-produto{font-size: 18px; margin-top: 0;}
+.botao-remover {
+    border: 1px solid #000;
+    color: #000;
+    margin-left: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.botao-remover:hover {
+    background-color: #FF4F4F;
+    cursor: pointer;
+}
+
+.infos-finalizar{list-style-type: none; margin: 0; padding: 0;}
+.infos-finalizar li{padding: 15px 0; border-bottom: 1px solid #000; font-size: 16px; display: flex;
+    justify-content: space-between;}
+    
+    .carrinho-finalizar button {
+        width: 100%;
+        margin-top: 20px;
+    }
