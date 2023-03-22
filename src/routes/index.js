@@ -25,4 +25,6 @@ router.delete('/product/:id', productController.delete)
 // GET - EJS Detail
 router.get('/product/detail/:id', productController.detailEJS)
 
+
+
 module.exports = router
