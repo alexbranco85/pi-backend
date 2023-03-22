@@ -6,7 +6,8 @@ const productController = require('../controllers/ProductController')
 
 // # Main
 // GET ALL
-router.get('/', mainController.index)
+router.get('/', mainController.index, mainController.sale);
+
 // GET ALL
 router.get('/search', mainController.search)
 

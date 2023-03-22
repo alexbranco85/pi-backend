@@ -57,7 +57,30 @@
 
         <section class="container carousel-lancamentos">
           <h2>AS MELHORES <strong>OFERTAS</strong></h2>
-          <ul class="lista-categorias lc2" id="ofertas-home">
+          <ul class="lista-categorias lc2" id="ofertas-hom  e">
+
+            <% const sales = products.filter(item => item.oferta === true); 
+              sales.forEach(item => {%>
+
+              <li class="lista-produtos">
+                <a href="produto.html#${produto.sku}"><img src= /></a>
+                <div class="produtos-cores">
+                  <ul>
+                    <li><img src="./img/cores/cor1.png" /></li>
+                    <li><img src="./img/cores/cor2.png" /></li>
+                  </ul>
+                </div>
+                <h4>
+                  <%= item.nome %>
+                </h4>
+                <div class="imgem-valores">
+                  <span class="valor-real">de R$ ${produto.valor}</span>
+                  <span class="promocao">por R$ ${produto.desconto}</span>
+                </div>
+                <button class="botao-eu-quero">EU QUERO</button>
+              </li>
+
+              <% }); %>
 
           </ul>
         </section>
@@ -69,7 +92,28 @@
           <h2>SEU <strong>ESTILO</strong> COMBINA COM ELES</h2>
 
           <ul class="lista-categorias" id="destaquesHome">
+            <% const featured = products.filter(item => item.destaque === true); 
+            featured.forEach(item => {%>
 
+              <li class="lista-produtos">
+                <a href="produto.html#${produto.sku}"><img src= /></a>
+                <div class="produtos-cores">
+                  <ul>
+                    <li><img src="./img/cores/cor1.png" /></li>
+                    <li><img src="./img/cores/cor2.png" /></li>
+                  </ul>
+                </div>
+                <h4>
+                  <%= item.nome %>
+                </h4>
+                <div class="imgem-valores">
+                  <span class="valor-real">de R$ ${produto.valor}</span>
+                  <span class="promocao">por R$ ${produto.desconto}</span>
+                </div>
+                <button class="botao-eu-quero">EU QUERO</button>
+              </li>
+
+              <% }); %>
           </ul>
 
         </section>
