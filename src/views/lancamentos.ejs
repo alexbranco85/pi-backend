@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt_BR">
 
-<!-- Include Head -->
-<%- include('includes/head', {title: 'Início' }) %>
-
+   <!-- Include Head -->
+   <%- include('includes/head', {title: 'Sneakers house' }) %>
 <body>
     <!-- Header -->
     <%- include('includes/header') %>
     <!--/Header -->
-    <!-- main esportes-->
+     <!--main lancamentos -->
     <main class="m-4">
         <section class="container titulo-categoria">
-            <h2>ESPORTES</h2>
+            <h2>LANÇAMENTOS</h2>
             <div class="result-pag">
                 <h3>427 itens | Resultados por página:</h3>
                 <select name="pag" id="select-qtdade-pag">
@@ -489,13 +488,10 @@
                 <span>&gt</span>
             </form>
         </section>
- <!-- /main esportes-->
-        <!-- footer -->
-     
-     
-       <%- include('includes/footer') %>
-    
-     <!--/footer-->
+ <!--/main lancamentos -->
+ <!-- footer -->
+ <%- include('includes/footer') %>
+ <!--/footer-->
 
         <div id="modal-login" class="modal-container">
             <div class="modal">
@@ -582,9 +578,7 @@
                 </div>
             </div>
         <script type="module" src="app/loginCadastro.js"></script>
-
     </main>
-      <!-- /main quemSomos-->
 </body>
 
 </html>
