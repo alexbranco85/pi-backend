@@ -11,17 +11,24 @@
       <!-- main Home -->
 
       <main>
-        <section class="slider"></section>
-        <article class="c-carousel c-carousel--simple">
-          <div class="c-carousel__slides js-carousel--simple">
-            <article class="c-carousel__slide"><img src="../../images/banner_01.png" /></article>
-            <article class="c-carousel__slide"><img src="../../images/banner_02.png" /></article>
+        <section class="slider-mobile">
+          <div class="slide slide01">
+            <div class="container">
+              <p class="titulo">Nike Air</p>
+              <p class="subtitulo">Force 1 Multicolor</p>
+              <button class="botao-vermelho">Compre agora</button>
+            </div>
           </div>
-          <div class="js-carousel--simple-dots"></div>
-        </article>
         </section>
-
-
+        <section class="slider">
+          <div class="slide slide01">
+            <div class="container">
+              <p class="titulo">Nike Air</p>
+              <p class="subtitulo">Force 1 Multicolor</p>
+              <a href="produto.html"><button class="botao-vermelho">Compre agora</button></a>
+            </div>
+          </div>
+        </section>
         <section class="icones-home">
           <div class="container">
             <ul class="lista-icones">
@@ -36,10 +43,10 @@
         <section class="container carousel-home-produtos">
           <div class="container">
             <ul class="lista-categorias lista-cat">
-              <li><a href="#"><img src="../images/categoria_01.png" /></a></li>
-              <li><a href="#"><img src="../images/categoria_02.png" /></a></li>
-              <li><a href="#"><img src="../images/categoria_03.png" /></a></li>
-              <li><a href="#"><img src="../images/categoria_04.png" /></a></li>
+              <li><a href="#"><img src="img/categoria_01.png" /></a></li>
+              <li><a href="#"><img src="img/categoria_02.png" /></a></li>
+              <li><a href="#"><img src="img/categoria_03.png" /></a></li>
+              <li><a href="#"><img src="img/categoria_04.png" /></a></li>
             </ul>
 
           </div>
@@ -52,23 +59,23 @@
           <h2>AS MELHORES <strong>OFERTAS</strong></h2>
           <ul class="lista-categorias lc2" id="ofertas-hom  e">
 
-            <% const sales=products.filter(item=> item.oferta === true);
+            <% const sales = products.filter(item => item.oferta === true); 
               sales.forEach(item => {%>
 
               <li class="lista-produtos">
-                <a href="produto.html#<%= item.sku %>"><img src="../images/produtos/<%= item.imagemDestaque %>"></a>
+                <a href="produto.html#${produto.sku}"><img src= /></a>
                 <div class="produtos-cores">
                   <ul>
-                    <li><img src="../images/cores/cor1.png" /></li>
-                    <li><img src="../images/cores/cor2.png" /></li>
+                    <li><img src="./img/cores/cor1.png" /></li>
+                    <li><img src="./img/cores/cor2.png" /></li>
                   </ul>
                 </div>
                 <h4>
                   <%= item.nome %>
                 </h4>
                 <div class="imgem-valores">
-                  <span class="valor-real">de R$ <%= item.valor %></span>
-                  <span class="promocao">por R$ <%= item.desconto %></span>
+                  <span class="valor-real">de R$ ${produto.valor}</span>
+                  <span class="promocao">por R$ ${produto.desconto}</span>
                 </div>
                 <button class="botao-eu-quero">EU QUERO</button>
               </li>
@@ -79,28 +86,29 @@
         </section>
 
         <section class="container banners-esportes">
-          <img src="../images/maskgroup.png" alt="">
+          <img src="./img/Maskgroup.png" alt="">
         </section>
         <section class="container carousel-home-produtos">
           <h2>SEU <strong>ESTILO</strong> COMBINA COM ELES</h2>
 
           <ul class="lista-categorias" id="destaquesHome">
-            <% const featured=products.filter(item=> item.destaque === true);
-              featured.forEach(item => {%>
+            <% const featured = products.filter(item => item.destaque === true); 
+            featured.forEach(item => {%>
+
               <li class="lista-produtos">
-                <a href="produto.html#<%= item.sku %>"><img src="../images/produtos/<%= item.imagemDestaque %>"></a>
+                <a href="produto.html#${produto.sku}"><img src= /></a>
                 <div class="produtos-cores">
                   <ul>
-                    <li><img src="../images/cores/cor1.png" /></li>
-                    <li><img src="../images/cores/cor2.png" /></li>
+                    <li><img src="./img/cores/cor1.png" /></li>
+                    <li><img src="./img/cores/cor2.png" /></li>
                   </ul>
                 </div>
                 <h4>
                   <%= item.nome %>
                 </h4>
                 <div class="imgem-valores">
-                  <span class="valor-real">de R$ <%= item.valor %></span>
-                  <span class="promocao">por R$ <%= item.desconto %></span>
+                  <span class="valor-real">de R$ ${produto.valor}</span>
+                  <span class="promocao">por R$ ${produto.desconto}</span>
                 </div>
                 <button class="botao-eu-quero">EU QUERO</button>
               </li>
@@ -134,25 +142,14 @@
         </section>
       </main>
 
+
+
+
       <!-- /main Home -->
 
       <!-- footer -->
       <%- include('includes/footer') %>
         <!-- /footer -->
-        <script>
-          var $simpleCarousel = document.querySelector(".js-carousel--simple");
-
-          new Glider($simpleCarousel, {
-            slidesToShow: 1,
-            slidesToScroll: 2,
-            draggable: true,
-            dots: ".js-carousel--simple-dots",
-            arrows: {
-              prev: ".js-carousel--simple-prev",
-              next: ".js-carousel--simple-next",
-            },
-          });
-        </script>
   </body>
 
 </html>
