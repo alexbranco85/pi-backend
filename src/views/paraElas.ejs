@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<!-- Include Head -->
+<%- include('includes/head', {title: 'Início' }) %>
+
+<body>
+    <!-- Header -->
+    <%- include('includes/header') %>
+    <!--/Header -->
+    
+    <!-- main paraElas-->
+    <main class="m-4">
+        <section class="container titulo-categoria">
+            <h2>PARA ELAS</h2>
+            <div class="result-pag">
+                <h3>427 itens | Resultados por página:</h3>
+                <select name="pag" id="select-qtdade-pag">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                </select>
+            </div>
+        </section>
+        <section class="container categorias-produtos">
+            <aside class="filter">
+                <div class="filter-preco filter-border">
+                    <h3>FILTRAR POR PREÇO</h3>
+
+                    <form action="" class="btn-filter">
+                        <input type="range" min="100" max="800" name="preco">
+                        <label for="preco">de 100.00 a 800.00</label>
+                        <a href="#" type="submit" class="button-filter">APLICAR</a>
+                    </form>
+                </div>
+                <div class="filter-marca filter-border">
+                    <h3>FILTRAR POR MARCA</h3>
+                    <form action="# " class="form-marca">
+                        <span>
+                            <input type="checkbox" name="vans" id="vans">
+                            <label for="vans">Vans</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="adidas" id="adidas">
+                            <label for="adidas">Adidas</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="asics" id="asics">
+                            <label for="asics">Asics</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="nike" id="nike">
+                            <label for="nike">Nike</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="puma" id="puma">
+                            <label for="puma">Puma</label>
+                        </span>
+                        <a href="#" type="submit" class="button-filter">APLICAR</a>
+                    </form>
+                </div>
+                <div class="filter-tipo filter-border">
+                    <h3>FILTRAR POR TIPO</h3>
+                    <form action="" class="form-marca">
+                        <span>
+                            <input type="checkbox" name="casual" id="casual">
+                            <label for="casual">Casual e Sapatênis</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="academia" id="academia">
+                            <label for="academia">Academia</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="basket" id="basket">
+                            <label for="basket">Basket</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="skate" id="skate">
+                            <label for="skate">Skate</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="corrida" id="corrida">
+                            <label for="corrida">Corrida</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="caminhada" id="caminhada">
+                            <label for="caminhada">Caminhada</label>
+                        </span>
+                        <a href="#" type="submit" class="button-filter">APLICAR</a>
+                    </form>
+
+                </div>
+                <div class="filter-tamanho filter-border">
+                    <h3>FILTRAR POR TIPO</h3>
+                    <form action="" method="post" class="form-n">
+                        <span>
+                            <input type="button" value="33" class="filter-number">
+                            <input type="button" value="34" class="filter-number">
+                            <input type="button" value="35" class="filter-number">
+                            <input type="button" value="36" class="filter-number">
+                            <input type="button" value="37" class="filter-number">
+                            <input type="button" value="38" class="filter-number">
+                            <input type="button" value="39" class="filter-number">
+                            <input type="button" value="40" class="filter-number">
+                            <input type="button" value="41" class="filter-number">
+                            <input type="button" value="42" class="filter-number">
+                            <input type="button" value="43" class="filter-number">
+                            <input type="button" value="44" class="filter-number">
+                            <input type="button" value="45" class="filter-number">
+                            <input type="button" value="46" class="filter-number">
+                        </span>
+                        <a href="#" type="submit" class="button-filter">APLICAR</a>
+                    </form>
+                </div>
+            </aside>
+
+            <div class="grid-produtos">
+                <ul class="lista-categorias">
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-branco.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>New Balance 550</h4>
+                            <div class="imgem-valores corrt">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-verde.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>Nike Dunk Low Safari Swoosh</h4>
+                            <div class="imgem-valores">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-colorido.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>UNDEFEATED x Nike Air Force 1</h4>
+                            <div class="imgem-valores">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-verde-escuro.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>Sneaker Politics x Asics Gel Lyte</h4>
+                            <div class="imgem-valores">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-branco.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>New Balance 550 UNC</h4>
+                            <div class="imgem-valores corrt">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-verde.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>Nike Dunk Low Safari Swoosh</h4>
+                            <div class="imgem-valores">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-colorido.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>UNDEFEATED x Nike Air Force 1</h4>
+                            <div class="imgem-valores">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-verde-escuro.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>Sneaker Politics x Asics Gel Lyte</h4>
+                            <div class="imgem-valores">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-branco.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>New Balance 550 UNC</h4>
+                            <div class="imgem-valores corrt">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-verde.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>Nike Dunk Low Safari Swoosh</h4>
+                            <div class="imgem-valores">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-colorido.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>UNDEFEATED x Nike Air Force 1</h4>
+                            <div class="imgem-valores">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-verde-escuro.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>Sneaker Politics x Asics Gel Lyte</h4>
+                            <div class="imgem-valores">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-branco.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>New Balance 550 UNC</h4>
+                            <div class="imgem-valores corrt">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-verde.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>Nike Dunk Low Safari Swoosh</h4>
+                            <div class="imgem-valores">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-colorido.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>UNDEFEATED x Nike Air Force 1</h4>
+                            <div class="imgem-valores">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-verde-escuro.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>Sneaker Politics x Asics Gel Lyte</h4>
+                            <div class="imgem-valores">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-branco.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>New Balance 550 UNC</h4>
+                            <div class="imgem-valores corrt">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-verde.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>Nike Dunk Low Safari Swoosh</h4>
+                            <div class="imgem-valores">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-colorido.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>UNDEFEATED x Nike Air Force 1</h4>
+                            <div class="imgem-valores">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-verde-escuro.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>Sneaker Politics x Asics Gel Lyte</h4>
+                            <div class="imgem-valores">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lista-produtos">
+                            <a href="#"><img src="img/tenis-verde.png" /></a>
+                            <div class="produtos-cores">
+                                <ul>
+                                    <li><img src="./img/cores/cor1.png" /></li>
+                                    <li><img src="./img/cores/cor2.png" /></li>
+                                </ul>
+                            </div>
+                            <h4>Nike Dunk Low Safari Swoosh</h4>
+                            <div class="imgem-valores">
+                                <span class="promocao">R$409,90</span>
+                                <span class="valor-real">R$599,90</span>
+                            </div>
+                            <button class="botao-eu-quero">EU QUERO</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="container conta-paginas">
+            <form action="" class="pag-tela">
+                <span>&lt</span>
+                <a href="" class="number-pag">1</a>
+                <a href="" class="number-pag">2</a>
+                <a href="" class="number-pag">3</a>
+                <a href="" class="number-pag">4</a>
+                <a href="" class="number-pag">5</a>
+                <a href="" class="number-pag">6</a>
+                <a href="" class="number-pag">7</a>
+                <a href="" class="number-pag">8</a>
+                <span>&gt</span>
+            </form>
+        </section>
+    <!-- main paraElas-->
+        
+  
+    <!-- footer -->
+     <%- include('includes/footer') %>
+     <!--/footer-->
+
+        <div id="modal-login" class="modal-container">
+            <div class="modal">
+                <div class="login">
+                    <button class="b-fechar">X</button>
+                    <h2>LOGIN</h2>
+                    <div id="input-login">
+                        <label for="email">Digite seu e-mail</label>
+                        <input type="email">
+                        <label for="password">Digite sua senha</label>
+                        <input type="password">
+                    </div>
+                    <div class="button-login">
+                        <button class="botao-vermelho">Entrar</button>
+                        <a href="" class="esqueci-senha">Esqueci minha senha</a>
+                    </div>
+                    <div class="redesocial-login">
+                        <img src="./img/redeSocial/facebook.png" alt="">
+                        <span>Entrar com o Facebook</span>
+                        <img src="./img/redeSocial/google.png" alt="">
+                        <span>Entrar com o Google</span>
+                    </div>
+                </div>
+                <div class="msg-criarConta">
+                    <h3><strong>Ainda não tem uma conta? </strong><a class="criar-conta">Clique aqui para criar.</a></h3>
+                </div>
+            </div>
+        </div>
+            <div id="modal-cadastro" class="modal-container">
+                <div class="modal-cadastro">
+                    <button class="b-fechar">X</button>
+                    <div class="flex-2">
+                        <section class="container">
+                            <div class="cadastro">
+                                <h2 class="h2-cadastro">INFORMAÇÕES PESSOAIS</h2>
+                                <div id="input-cadastro">
+                                    <label for="nome">Nome Completo</label>
+                                    <input type="text" name="nome">
+                                    <label for="email">Endereço de E-mail</label>
+                                    <input type="email">
+                                    <label for="cpf">CPF</label>
+                                    <input type="number">
+                                    <label for="rg">RG</label>
+                                    <input type="number">
+                                    <label for="data-nascimento">Data de Nascimento</label>
+                                    <input type="date">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="container">
+                            <div class="cadastro">
+                                <h2 class="h2-cadastro m-botton">ENDEREÇO</h2>
+                                <div id="input-cadastro">
+                                    <div class="label-line">
+                                        <label for="endereco">Logradouro</label>
+                                        <label for="numero">Número</label>
+                                    </div>
+                                    <div class="input-line">
+                                        <input type="text" name="endereco" class="in-1">
+                                        <input type="number" name="numero" class="in-2">
+                                    </div>
+                                    <label for="bairro">Bairro</label>
+                                    <input type="text">
+                                    <div class="label-line">
+                                        <label for="cidade">Cidade</label>
+                                        <label for="estado">Estado</label>
+                                    </div>
+                                    <div class="input-line">
+                                        <input type="text" name="cidade" class="in-1">
+                                        <input type="estado" name="estado" class="in-2">
+                                    </div>
+                                    <label for="cep">CEP</label>
+                                    <input type="number"> 
+                                </div>
+                                <div class="button-cadastro">
+                                    <button class="botao-vermelho">Entrar</button>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="msg-criarConta">
+                        <h3><strong>Já tem uma conta? </strong><a class="entrar-login">Clique aqui para entrar.</a></h3>
+                    </div>
+                </div>
+            </div>
+        <script type="module" src="app/home.js"></script>
+        <script type="module" src="app/loginCadastro.js"></script>
+    </main>
+</body>
+
+</html>
