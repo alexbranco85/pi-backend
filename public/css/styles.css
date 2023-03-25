@@ -30,7 +30,11 @@ button{font-family: 'Lato', sans-serif; width: fit-content; padding: 15px 30px; 
     height: 1px;
     background-color: #000;
 }
-
+.glider-dots {
+    margin-top: -30px;
+    z-index: 5;
+    position: relative;
+}
 
 header{background-color: #000; border-top: 15px solid #FF4F4F;}
 header .container{padding: 20px 0; display: flex; align-items: center; color: #fff; justify-content: space-between;}
@@ -52,7 +56,7 @@ input.header-search {padding: 5px;}
 
 .slider-mobile{display: none;}
 .slide{background-color: #000;}
-.slide01 {background-image: url(../img/banner_01.png); background-position: center; background-repeat: no-repeat;}
+.slide01 {background-image: url(../images/banner_01.png); background-position: center; background-repeat: no-repeat;}
 
 .slide .titulo{font-family: 'Lato'; font-style: normal; font-weight: 900; font-size: 64px; letter-spacing: 0.05em; color: #FFFFFF;}
 .slide .subtitulo{font-family: 'Lato'; font-style: normal; font-weight: 900; font-size: 28px; letter-spacing: 0.2em; color: #fff;}
@@ -75,7 +79,7 @@ input.header-search {padding: 5px;}
 .lista-categorias img {transition: 0.5s all ease-in-out;}
 .lista-categorias img:hover {transform: scale(1.1);}
 
-.titulo-promo{height: 55px; background-image: url(../img/img-titulo-promo.png); background-repeat: no-repeat; background-position: center; padding-top: 50px; padding-bottom: 50px;}
+.titulo-promo{height: 55px; background-image: url(../images/img-titulo-promo.png); background-repeat: no-repeat; background-position: center; padding-top: 50px; padding-bottom: 50px;}
 
 .imgem-valores {margin-bottom: 30px; color: #000;}
 .valor-real {font-size: 10px; margin-left: 12px; text-decoration: line-through;}
@@ -111,12 +115,12 @@ input.header-search {padding: 5px;}
     background-position: center
 }
 
-.r01{background-image: url(../img/marcas/logo-marcas-carrossel-vans.png);}
-.r02{background-image: url(../img/marcas/logo-marcas-carrossel-adidas.png);}
-.r03{background-image: url(../img/marcas/logo-marcas-carrossel-asics.png);}
-.r04{background-image: url(../img/marcas/logo-marcas-carrossel-jordan.png);}
-.r05{background-image: url(../img/marcas/logo-marcas-carrossel-nike.png);}
-.r06{background-image: url(../img/marcas/logo-marcas-carrossel-puma.png);}
+.r01{background-image: url(../images/marcas/logo-marcas-carrossel-vans.png);}
+.r02{background-image: url(../images/marcas/logo-marcas-carrossel-adidas.png);}
+.r03{background-image: url(../images/marcas/logo-marcas-carrossel-asics.png);}
+.r04{background-image: url(../images/marcas/logo-marcas-carrossel-jordan.png);}
+.r05{background-image: url(../images/marcas/logo-marcas-carrossel-nike.png);}
+.r06{background-image: url(../images/marcas/logo-marcas-carrossel-puma.png);}
 
 .r01,.r02,.r03,.r04,.r05,.r06{transition: 0.5s all ease-in-out;}
 .r01:hover,.r02:hover,.r03:hover,.r04:hover,.r05:hover,.r06:hover {transform: scale(1.2);}
