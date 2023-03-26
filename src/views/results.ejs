@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <!-- Include Head -->
-<%- include('includes/head', {title: 'Resultados da sua pesquisa' }) %>
+<%- include('includes/head', {title: 'Resultados da sua pesquisa', imports: '<link rel="stylesheet" href="/css/results.css">'  }) %>
 
   <body>
     <!-- Header -->
@@ -20,24 +20,24 @@
           </div>
           <% if (products.length> 0) {
             products.forEach((product) => {
-            let finalPrice = (product.valor * ((100 - product.desconto) / 100)).toFixed(0)
-          %>
+            let finalPrice = (product.valor - product.desconto).toFixed(0)
+          %> 
           <div class="col-12 col-sm-6 col-lg-3">
             <section class="product-box">
-              <a href="/product/detail/<%= `${product.sku}/` %>">
+              <a href="/produto/<%= `${product.sku}/` %>">
                 <figure class="product-box_image">
                   <img src="../images/produtos/<%= product.imagemDestaque %>" alt="imagem do produto">
                 </figure>
                 <article class="product-box_data">
-                  <h2>$<%= toThousand(finalPrice) %>
+                  <h2> de $<%= product.valor %>
                   </h2>
                   <span>
-                    <%= product.desconto %>% OFF
+                    por R$ <%= product.desconto %>
                   </span>
                   <p>
                     <%= product.nome %>
                   </p>
-                  <i class="fas fa-truck"></i>
+                  
                 </article>
               </a>
             </section>
