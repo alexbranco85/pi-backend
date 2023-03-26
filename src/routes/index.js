@@ -18,6 +18,8 @@ router.get('/search', mainController.search)
 
 router.get('/categoria/:categoria', categoryController.showAll)
 
+router.get('/produto/:sku', productController.showBySku)
+
 // # Product
 // GET ALL
 router.get('/product', productController.showAll)

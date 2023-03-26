@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <!-- Include Head -->
-<%- include('includes/head', {title: 'Início' }) %>
+<%- include('includes/head', { title: 'Início', imports: '' }) %>
 
   <body>
     <!-- Header -->
@@ -56,7 +56,7 @@
               sales.forEach(item => {%>
 
               <li class="lista-produtos">
-                <a href="produto.html#<%= item.sku %>"><img src="../images/produtos/<%= item.imagemDestaque %>"></a>
+                <a href="produto/<%= item.sku %>"><img src="../images/produtos/<%= item.imagemDestaque %>"></a>
                 <div class="produtos-cores">
                   <ul>
                     <li><img src="../images/cores/cor1.png" /></li>
@@ -88,7 +88,7 @@
             <% const featured=products.filter(item=> item.destaque === true);
               featured.forEach(item => {%>
               <li class="lista-produtos">
-                <a href="produto.html#<%= item.sku %>"><img src="../images/produtos/<%= item.imagemDestaque %>"></a>
+                <a href="produto/<%= item.sku %>"><img src="../images/produtos/<%= item.imagemDestaque %>"></a>
                 <div class="produtos-cores">
                   <ul>
                     <li><img src="../images/cores/cor1.png" /></li>

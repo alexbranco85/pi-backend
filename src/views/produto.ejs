@@ -1,0 +1,263 @@
+<html lang="PT-BR">
+
+<!-- Include Head -->
+<%- include('includes/head', {title: 'Categoria' , imports: '<link rel="stylesheet" href="/css/produto.css">' }) %>
+
+
+    <body>
+        <%- include('includes/header') %>
+
+            <main>
+                <section>
+                    <div class="container produto-unico" id="single-product">
+
+                        <div class="produto-escolha" id="imagens-secundarias"> </div>
+                        <div class="imagem-principal" id="imagem-principal">
+                            <img src="../images/produtos/<%= product.imagemDestaque %>" alt="">
+                        </div>
+
+
+                        <div class="produto-infos">
+                            <div class="produto-infos-detalhes">
+                                <h2 class="produto-infos-titulo">
+                                    <%= product.nome %>
+                                </h2>
+                                <h3 class="produto-infos-valor">de R$ <%= product.valor %> por <span
+                                            style="font-size:20px;"><strong>R$ <%= product.desconto %></strong></span>
+                                </h3>
+                                <% const parcelado = product.desconto / 10 %>
+                                <span class="produto-infos-parcelamento">em até 10x R$ <%= parcelado.toFixed(2).toString().replace('.', ',') %> sem
+                                        juros</span>
+                                <div class="quantidade-likes-dislike">
+                                    <img src="../images/avaliacoes_5.png" alt="">
+                                    <h6>(13 avaliações)</h6>
+                                </div>
+                                <div class="escolhertamanho">
+                                    <h3 class="produto-infos-tamanhos-titulo">Tamanhos</h3>
+                                    <select class="select-qtdade-box" id="size">
+                                        <% product.tamanhos.forEach(size=> { %>
+                                            <option value=<%=size %>><%= size %>
+                                            </option>
+                                            <% }); %>
+                                    </select>
+                                </div>
+                                <div class="escolhercores">
+                                    <h3 class="produto-infos-cores-titulo">Cores</h3>
+
+                                    <% product.cores.forEach(color=> { %>
+                                        <div class='colors color-<%= color %>'></div>
+                                        <% }); %>
+
+                                </div>
+                            </div>
+                            <div class="produto-infos-entrega">
+                                <button class="botao-carrinho botao-eu-quero" id="cartAdd">ADICIONAR AO
+                                    CARRINHO</button>
+                                <div class="produto-infos-entrega-adicionar">
+                                    <span class="material-symbols-outlined">local_shipping</span>
+
+                                    <p class="produto-infos-entrega-frete">Frete Grátis para todo o Brasil
+                                        em compras acima de R$ 299,90 <span>+5%</span> de desconto em pagamento
+                                        por boleto ou pix</p>
+                                </div>
+                                <button class="botao-frete">Clique aqui para calcular frete</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="sobre-produto" id="sobre-produto">
+
+                    <h2 class="sobre-produto-titulo">SOBRE O PRODUTO</h2>
+                    <div class="container">
+                        <div class="sobre-esq">
+                            <p class="descricao-paragrafo">
+                                <%= product.descricao %>
+                            </p>
+
+                        </div>
+                        <div class="sobre-dir">
+                            <img class="sobre-produto-imagem" src="../images/produtos/<%= product.imagemDestaque %>"
+                                alt="">
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <!-- <section class="produto-avaliacoes">
+            <button class="accordion">AVALIAÇÕES ˆ</button>
+            <div class="panel" id="panell">
+                <div class="produto-avaliacoes-lista">
+                    <ul>
+                        <li>Conforto <img src="./img/avaliacoes_5.png" alt=""> </li>
+                        <li>Qualidade do Material <img src="./img/avaliacoes_5.png" alt=""></li>
+                        <li>Entrega <img src="./img/avaliacoes_5.png" alt=""></li>
+                        <li>Tamanho <img src="./img/avaliacoes_5.png" alt=""></li>
+                    </ul>
+                </div>
+                <div class="avaliacoes-texto">
+                    <div class="avaliacao-1">
+                        <h4>O melhor tênis que já comprei</h4>
+                        <p>Super confortável, parece que eu tô andando em uma nuvem, sem contar que ele é lindo. A
+                            entrega foi dentro do prometido e veio muito bem embalado. Recomendo!</p>
+                        <h6>A avaliação foi útil?</h6>
+                        <div class="like-dislike">
+                            <span class="material-symbols-outlined">thumb_up</span>
+                            <span class="quantidade-likes-dislike"><strong>(2)</strong></span>
+                            <span class="material-symbols-outlined">thumb_down</span>
+                            <span class="quantidade-likes-dislike"><strong>(0)</strong></span>
+                        </div>
+                    </div>
+                    <div class="avaliacao-2">
+                        <h4>Entrega rápida</h4>
+                        <p>Comprei esse tênis e um Van. Chegaram super rápido, amei!</p>
+                        <h6>A avaliação foi útil?</h6>
+                        <div class="like-dislike">
+                            <span class="material-symbols-outlined">thumb_up</span>
+                            <span class="quantidade-likes-dislike"><strong>(2)</strong></span>
+                            <span class="material-symbols-outlined">thumb_down</span>
+                            <span class="quantidade-likes-dislike"><strong>(0)</strong></span>
+                        </div>
+                    </div>
+                    <div class="avaliacao-3">
+                        <h4>Muito confortável</h4>
+                        <p>Parece um tênis bruto, mas ele é super leve, parece que abraça o seu pé. É ótimo pra diversas
+                            ocasiões. Não consigo mais ficar sem ele!</p>
+                        <p>A avaliação foi útil?</p>
+                        <div class="like-dislike">
+                            <span class="material-symbols-outlined">thumb_up</span>
+                            <span class="quantidade-likes-dislike"><strong>(2)</strong></span>
+                            <span class="material-symbols-outlined">thumb_down</span>
+                            <span class="quantidade-likes-dislike"><strong>(0)</strong></span>
+                        </div>
+                    </div>
+                    <button class="botao-eu-quero">Ler mais comentários</button>
+                </div>
+            </div>
+        </section> -->
+
+                <!-- <div class="produtos-collabs">
+            <h2>VOCÊ VAI GOSTAR</h2>
+            <h3>COLLABS</h3>
+        </div>
+
+        <div class="produtos-collabs-marcas">
+            <div class="produtos-collabs-lego">
+                <img src="./img/collabs/adidas-tenis-lego 1.png" alt="">
+                <h3 class="produtos-collabs-titulo">Adidas + Lego</h3>
+                <button class="botao-ver-mais">VER MAIS</button>
+            </div>
+
+            <div class="produtos-collabs-puma">
+                <img src="./img/collabs/puma_1-20138172 1.png" alt="">
+                <h3 class="produtos-collabs-titulo">Puma + Minecraft</h3>
+                <button class="botao-ver-mais">VER MAIS</button>
+            </div>
+
+            <div class="produtos-collabs-vans">
+                <img src="./img/collabs/sailor-moon 1.png" alt="">
+                <h3 class="produtos-collabs-titulo">Vans + Sailor Moon</h3>
+                <button class="botao-ver-mais">VER MAIS</button>
+            </div>
+
+        </div> -->
+
+
+
+            </main>
+
+            <%- include('includes/footer') %>
+                <div id="modal-login" class="modal-container">
+                    <div class="modal">
+                        <div class="login">
+                            <button class="b-fechar">X</button>
+                            <h2>LOGIN</h2>
+                            <div id="input-login">
+                                <label for="email">Digite seu e-mail</label>
+                                <input type="email">
+                                <label for="password">Digite sua senha</label>
+                                <input type="password">
+                            </div>
+                            <div class="button-login">
+                                <button class="botao-vermelho">Entrar</button>
+                                <a href="" class="esqueci-senha">Esqueci minha senha</a>
+                            </div>
+                            <div class="redesocial-login">
+                                <img src="./img/redeSocial/facebook.png" alt="">
+                                <span>Entrar com o Facebook</span>
+                                <img src="./img/redeSocial/google.png" alt="">
+                                <span>Entrar com o Google</span>
+                            </div>
+                        </div>
+                        <div class="msg-criarConta">
+                            <h3><strong>Ainda não tem uma conta? </strong><a class="criar-conta">Clique aqui para
+                                    criar.</a></h3>
+                        </div>
+                    </div>
+                </div>
+                <div id="modal-cadastro" class="modal-container">
+                    <div class="modal-cadastro">
+                        <button class="b-fechar">X</button>
+                        <div class="flex-2">
+                            <section class="container">
+                                <div class="cadastro">
+                                    <h2 class="h2-cadastro">INFORMAÇÕES PESSOAIS</h2>
+                                    <div id="input-cadastro">
+                                        <label for="nome">Nome Completo</label>
+                                        <input type="text" name="nome">
+                                        <label for="email">Endereço de E-mail</label>
+                                        <input type="email">
+                                        <label for="cpf">CPF</label>
+                                        <input type="number">
+                                        <label for="rg">RG</label>
+                                        <input type="number">
+                                        <label for="data-nascimento">Data de Nascimento</label>
+                                        <input type="date">
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="container">
+                                <div class="cadastro">
+                                    <h2 class="h2-cadastro m-botton">ENDEREÇO</h2>
+                                    <div id="input-cadastro">
+                                        <div class="label-line">
+                                            <label for="endereco">Logradouro</label>
+                                            <label for="numero">Número</label>
+                                        </div>
+                                        <div class="input-line">
+                                            <input type="text" name="endereco" class="in-1">
+                                            <input type="number" name="numero" class="in-2">
+                                        </div>
+                                        <label for="bairro">Bairro</label>
+                                        <input type="text">
+                                        <div class="label-line">
+                                            <label for="cidade">Cidade</label>
+                                            <label for="estado">Estado</label>
+                                        </div>
+                                        <div class="input-line">
+                                            <input type="text" name="cidade" class="in-1">
+                                            <input type="estado" name="estado" class="in-2">
+                                        </div>
+                                        <label for="cep">CEP</label>
+                                        <input type="number">
+                                    </div>
+                                    <div class="button-cadastro">
+                                        <button class="botao-vermelho">Entrar</button>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="msg-criarConta">
+                            <h3><strong>Já tem uma conta? </strong><a class="entrar-login">Clique aqui para entrar.</a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <script type="module" src="app/produto.js"></script>
+                <script type="module" src="app/loginCadastro.js"></script>
+    </body>
+
+
+</html>
