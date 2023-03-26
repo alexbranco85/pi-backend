@@ -73,7 +73,7 @@ input.header-search {padding: 5px;}
 .lista-icones span {font-size: 30px; vertical-align: middle; margin-right: 10px;}
 
 .carousel-home-produtos{margin-top: 40px;}
-.lista-categorias {display: flex; list-style: none; justify-content: space-between; margin: 0; column-gap: 20px; padding: 10px 0}
+.lista-categorias {display: flex; list-style: none; justify-content: space-between; margin: 0; column-gap: 10px; padding-left: 0;}
 .lista-categorias > li {border-radius: 10px; border: solid #fff 1px; color: #fff; text-align: center; width: calc(25% - 3rem);}
 .lista-categorias li img {width: 100%;}
 .lista-categorias img {transition: 0.5s all ease-in-out;}

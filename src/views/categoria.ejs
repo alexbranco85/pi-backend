@@ -2,11 +2,11 @@
 <html lang="pt_BR">
 
 <!-- Include Head -->
-<%- include('includes/head', {title: 'Categoria' }) %>
+<%- include('includes/head', {title: 'Categoria', imports: '' }) %>
 
     <body>
         <!-- Header -->
-        <%- include('includes/header') %>
+        <%- include('includes/header', {title: catName.nome }) %>
             <!--/Header -->
 
             <!-- main paraElas-->
@@ -118,7 +118,7 @@
                         <ul class="lista-categorias">
                             <% catProducts.forEach(item=> { %>
                                 <li class="lista-produtos">
-                                    <a href="produto.html#<%= item.sku %>"><img
+                                    <a href="../produto/<%= item.sku %>"><img
                                             src="../images/produtos/<%= item.imagemDestaque %>"></a>
                                     <div class="produtos-cores">
                                         <ul>

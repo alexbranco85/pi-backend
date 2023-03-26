@@ -19,7 +19,7 @@ input[type="range"] {width: 100%; padding: 0; margin: 0;}
 .grid-produtos {width: 75%;}
 
 
-.grid-produtos .lista-categorias > li {border-radius: 10px; border: solid #fff 1px; color: #fff; text-align: center; width: calc(33.3% - 15px); margin-bottom: 1rem;}
+.grid-produtos .lista-categorias > li {border-radius: 10px; border: solid #fff 1px; color: #fff; text-align: center; width: calc(33.3% - 30px); margin-bottom: 1rem;}
 .conta-paginas{border-top:1px solid #000; padding: 2rem 0;}
 .conta-paginas a{margin: 10px; text-decoration:none; color: #000000;}
 .conta-paginas a:hover{margin: 10px; text-decoration:none; color: #FF4F4F; font-weight: bold;}

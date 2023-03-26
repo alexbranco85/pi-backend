@@ -29,4 +29,22 @@
             <a href="carrinho-compras.html"><span class="material-symbols-sharp header-icon">shopping_cart</span></a>
         </div>
     </div>
+    
+    <% if(locals.title){ %>
+        <div class="menu-navbar">
+            <ul class="container">
+                <li>
+                    <a href="/">Início</a>
+                </li>
+                <span> > </span>
+                <li class="link-pagina-atual">
+
+                    <a href="">
+                        <%= title %>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <%}%>
+    
 </header>
