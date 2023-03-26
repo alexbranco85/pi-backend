@@ -4,16 +4,19 @@ const router = express.Router()
 const mainController = require('../controllers/MainController')
 const productController = require('../controllers/ProductController')
 const quemSomosController = require('../controllers/QuemSomos.js')
+const categoryController = require('../controllers/CategoryController')
 
 // # Main
 // GET ALL
-router.get('/', mainController.index, mainController.sale);
+router.get('/', mainController.index);
 
 router.get('/quemsomos', quemSomosController.index);
 
 
 // GET ALL
 router.get('/search', mainController.search)
+
+router.get('/categoria/:categoria', categoryController.showAll)
 
 // # Product
 // GET ALL

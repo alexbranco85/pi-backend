@@ -15,13 +15,6 @@ const MainController = {
       saleproducts: saleProducts, toThousand
     })
   },
-
-  // featured: (req, res) => {
-  //   let featuredProducts = products.filter(product => product.destaque === true)
-  //   res.render('index', {
-  //     products: featuredProducts, toThousand,
-  //   })
-  // },
   search: (req, res) => {
     let search = req.query.keywords
     let productsToSearch = products.filter(product => product.name.toLowerCase().includes(search))
