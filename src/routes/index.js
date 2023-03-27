@@ -5,13 +5,13 @@ const mainController = require('../controllers/MainController')
 const productController = require('../controllers/ProductController')
 const quemSomosController = require('../controllers/QuemSomos.js')
 const categoryController = require('../controllers/CategoryController')
+const AdminController = require('../controllers/AdminController')
 
 // # Main
 // GET ALL
 router.get('/', mainController.index);
 
 router.get('/quemsomos', quemSomosController.index);
-
 
 // GET ALL
 router.get('/search', mainController.search)
@@ -34,5 +34,12 @@ router.delete('/product/:id', productController.delete)
 
 // GET - EJS Detail
 router.get('/product/detail/:id', productController.detailEJS)
+
+
+// ADMIN
+
+router.get('/admin', AdminController.showAll);
+
+router.delete('/admin/excluir/:id', AdminController.delete);
 
 module.exports = router
