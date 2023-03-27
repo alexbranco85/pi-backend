@@ -17,6 +17,7 @@ h2 {font-style: normal;
 
 input{border-radius: 10px; margin: 5px 0 5px; padding: 8px; border: 1px solid #000;}
 button{font-family: 'Lato', sans-serif; width: fit-content; padding: 15px 30px; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase;  border-radius: 10px;}
+.header-search:focus { color: #FF4F4F; }
 
 .botao-vermelho {background-color: #FF4F4F; cursor: pointer;}
 .botao-vermelho:hover {background-color: #000; color: #fff;}

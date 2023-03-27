@@ -17,7 +17,7 @@ const MainController = {
   },
   search: (req, res) => {
     let search = req.query.keywords
-    let productsToSearch = products.filter(product => product.name.toLowerCase().includes(search))
+    let productsToSearch = products.filter(product => product.nome.toLowerCase().includes(search))
     res.render('results', {
       products: productsToSearch,
       search,
