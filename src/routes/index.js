@@ -5,7 +5,7 @@ const mainController = require('../controllers/MainController')
 const productController = require('../controllers/ProductController')
 const quemSomosController = require('../controllers/QuemSomos.js')
 const categoryController = require('../controllers/CategoryController')
-const AdminController = require('../controllers/AdminController')
+const adminController = require('../controllers/AdminController')
 
 // # Main
 // GET ALL
@@ -20,26 +20,15 @@ router.get('/categoria/:categoria', categoryController.showAll)
 
 router.get('/produto/:sku', productController.showBySku)
 
-// # Product
-// GET ALL
-router.get('/product', productController.showAll)
-// GET By Id
-router.get('/product/:id', productController.showById)
-// POST
-router.post('/product', productController.create)
-// PUT
-router.put('/product/:id', productController.update)
-// DELETE
-router.delete('/product/:id', productController.delete)
-
-// GET - EJS Detail
-router.get('/product/detail/:id', productController.detailEJS)
-
-
 // ADMIN
 
-router.get('/admin', AdminController.showAll);
+router.get('/admin', adminController.showAll);
 
-router.delete('/admin/excluir/:id', AdminController.delete);
+router.delete('/admin/excluir/:id', adminController.delete);
+
+router.get('/admin/editar/:sku', adminController.updateForm);
+router.put('/admin/editado/:sku', adminController.updateProduct)
+
+
 
 module.exports = router

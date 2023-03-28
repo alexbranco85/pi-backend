@@ -14,7 +14,7 @@
                         <div class="sku" style="width: 15%; display: flex; align-items: center;"><%= item.sku %></div>
                         <div class="nome" style="width: 30%; display: flex; align-items: center;"><%= item.nome %></div>
                         <div class="excluir" style="width: 130px; display: flex; align-items: center;">
-                            <form action="/admin/excluir/<%= item.sku %>" method="post">
+                            <form action="/admin/excluir/<%= item.sku %>_method=DELETE" method="post">
                                 <button>excluir</button>
                               </form>
                             
