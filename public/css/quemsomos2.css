@@ -24,7 +24,7 @@
 }
 
 .slide_01 {
-    background-image: url(../img/banner-quem-somos.png);
+    background-image: url(../images/banner-quem-somos.png);
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -59,7 +59,7 @@
 }
 
 .segundaapres{
-    background-image: url(../img/MartaCopaItalia1.png); background-repeat: no-repeat;
+    background-image: url(../images/MartaCopaItalia1.png); background-repeat: no-repeat;
     background-position: top center;
     display: flex;
     flex-direction: column;
@@ -114,7 +114,7 @@
 }
 
 .contato-infos {
-    background-image: url(../img/runner.png);
+    background-image: url(../images/runner.png);
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
