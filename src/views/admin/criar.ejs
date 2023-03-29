@@ -37,9 +37,17 @@
 								<label for="imagens" class="form-label">Imagens:</label>
 								<input type="text" id="imagens" name="imagens" placeholder="Informe o nome do produto" class="form-input">
 							</div>
-							<div class="col-12">
+							<div class="col-12 col-md-6">
 								<label for="categoria" class="form-label">Categoria:</label>
-								<input type="text" id="categoria" name="categoria" placeholder="Informe o nome do produto" class="form-input">
+								
+								<select name="categoria" id="categoria">
+									<option value="1">Para Eles</option>
+									<option value="2">Para Elas</option>
+									<option value="3">Esportes</option>
+									<option value="5">Lançamentos</option>
+								</select>
+								
+							</div>
 							</div>
 							<div class="col-12">
 								<label for="cores" class="form-label">Cores:</label>
@@ -55,17 +63,17 @@
 								<label for="desconto" class="form-label">Valor com Desconto:</label>
 								<input type="text" id="desconto" name="desconto" placeholder="Informe o desconto do produto" class="form-input">
 							</div>
-							<div class="col-12">
-								<label for="descricao" class="form-label">Descrição:</label>
-								<textarea name="descricao" id="descricao" class="form-input"></textarea>
-							</div>
+							
 							<div class="col-12">
 								<label for="tamanhos" class="form-label">Tamanhos:</label>
 								<textarea name="tamanhos" id="tamanhos" class="form-input"></textarea>
 							</div>
 							<div class="col-12">
 								<label for="destaque" class="form-label">Destaque:</label>
-								<textarea name="destaque" id="destaque" class="form-input"></textarea>
+								<select name="destaque" id="destaque">
+									<option value="true">Sim</option>
+									<option value="false">Não</option>
+								</select>
 							</div>
 							<div class="col-12">
 								<label for="oferta" class="form-label">Oferta:</label>
@@ -73,7 +81,10 @@
 									<option value="true">Sim</option>
 									<option value="false">Não</option>
 								</select>
-								<!-- <textarea name="oferta" id="oferta" class="form-input"></textarea> -->
+							</div>
+							<div class="col-12">
+								<label for="descricao" class="form-label">Descrição:</label>
+								<textarea name="descricao" id="descricao" class="form-input"></textarea>
 							</div>
 							<div class="col-12">
 								<button type="submit" class="buy-now-button">Salvar</button>

@@ -5,7 +5,7 @@
 
 
     <body>
-        <%- include('includes/header', {title: product.nome}) %>
+        <%- include('includes/header') %>
 
             <main>
                 <section>
@@ -34,19 +34,27 @@
                                 </div>
                                 <div class="escolhertamanho">
                                     <h3 class="produto-infos-tamanhos-titulo">Tamanhos</h3>
-                                    <select class="select-qtdade-box" id="size">
+                                    <% if(Array.isArray(product.tamanhos)){ %>
+                                        <select class="select-qtdade-box" id="size"></select>
                                         <% product.tamanhos.forEach(size=> { %>
                                             <option value=<%=size %>><%= size %>
                                             </option>
-                                            <% }); %>
+                                        <% }); %>
                                     </select>
+                                    <% } else { %>
+                                        <p><% product.tamanhos %></p>
+                                    <% }%>
                                 </div>
                                 <div class="escolhercores">
                                     <h3 class="produto-infos-cores-titulo">Cores</h3>
 
-                                    <% product.cores.forEach(color=> { %>
-                                        <div class='colors color-<%= color %>'></div>
+                                    <% if(Array.isArray(product.cores)){ %>
+                                        <% product.cores.forEach(color=> { %>
+                                            <div class='colors color-<%= color %>'></div>
                                         <% }); %>
+                                    <% } else { %>
+                                        <p><% product.cores %></p>
+                                    <% }%>
 
                                 </div>
                             </div>
