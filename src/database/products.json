@@ -1,11 +1,12 @@
 [
   {
+      "id": 1,
       "sku": "BBW550BC",
       "marca": "NewBalance",
       "nome": "New Balance 550 UNC",
       "imagemDestaque": "new-balance-550-01.png",
       "imagens": ["new-balance-550-01.png", "new-balance-550-02.png", "new-balance-550-03.png"],
-      "categoria": "3",
+      "categoria": "1",
       "cores": ["multicolor"],
       "valor": "399,90",
       "desconto": "299.00",
@@ -16,6 +17,7 @@
   }
   ,
   {
+      "id": 2,
       "sku": "DV5255500",
       "marca": "Nike",
       "nome": "UNDEFEATED x Nike Air Force 1",
@@ -32,12 +34,13 @@
   }
   ,
   {
+      "id": 3,
       "sku": "DR0156300",
       "marca": "Nike",
       "nome": "Nike Dunk Low Safari Swoosh",
       "imagemDestaque": "nike-dunk-low-safari-01.png",
       "imagens": ["nike-dunk-low-safari-01.png","nike-dunk-low-safari-02.png", "nike-dunk-low-safari-03.png"],
-      "categoria": "1",
+      "categoria": "2",
       "cores": ["branco", "verde"],
       "valor": "599,90",
       "desconto": "299.00",
@@ -48,12 +51,13 @@
   }
   ,
   {
+      "id": 4,
       "sku": "1201A516300",
       "marca": "Asics",
       "nome": "Sneaker Politics x Asics Gel Lyte",
       "imagemDestaque": "sneaker-politics-x-asics-01.png",
       "imagens": ["sneaker-politics-x-asics-01.png","sneaker-politics-x-asics-02.png", "sneaker-politics-x-asics-03.png"],
-      "categoria": "1",
+      "categoria": "2",
       "cores": ["verde"],
       "valor": "599,90",
       "desconto": "299.00",
@@ -65,12 +69,13 @@
 
 
   {
+      "id": 5,
       "sku": "1201A871961",
       "marca": "Asics",
       "nome": "Asics Gel-Lyte V Pink Aqua Multicolor",
       "imagemDestaque": "AsicsGel-LyteVPink-01.png",
       "imagens": ["AsicsGel-LyteVPink-01.png", "AsicsGel-LyteVPink-02.png", "AsicsGel-LyteVPink-03.png"],
-      "categoria": "1",
+      "categoria": "3",
       "cores": ["multicolor"],
       "valor": "399,90",
       "desconto": "299.00",
@@ -81,12 +86,13 @@
   }
   ,
   {
+      "id": 6,
       "sku": "HP9782",
       "marca": "Adidas",
       "nome": "Adidas Orketro 2.0 Blue Bird",
       "imagemDestaque": "adidasOrketro-01.png",
       "imagens": ["adidasOrketro-01.png","adidasOrketro-02.png", "adidasOrketro-03.png"],
-      "categoria": "1",
+      "categoria": "3",
       "cores": ["multicolor"],
       "valor": "299,90",
       "desconto": "199.00",
@@ -97,12 +103,13 @@
   }
   ,
   {
+      "id": 7,
       "sku": "U9060FNB",
       "marca": "New Balance",
       "nome": "New Balance 9060 Blue Haze",
       "imagemDestaque": "NewBalanceBlueHaze-01.png",
       "imagens": ["NewBalanceBlueHaze-01.png","NewBalanceBlueHaze-02.png", "NewBalanceBlueHaze-03.png"],
-      "categoria": "1",
+      "categoria": "4",
       "cores": ["azul Sclaro"],
       "valor": "599,90",
       "desconto": "299.00",
@@ -113,12 +120,13 @@
   }
   ,
   {
+      "id": 8,
       "sku": "DV3888600",
       "marca": "Nike",
       "nome": "Nike Air Max 1 87 Burgundy Crush",
       "imagemDestaque": "nike-air-max-burgundy-crush-01.png",
       "imagens": ["nike-air-max-burgundy-crush-01.png","nike-air-max-burgundy-crush-02.png", "nike-air-max-burgundy-crush-03.png"],
-      "categoria": "1",
+      "categoria": "4",
       "cores": ["marrom"],
       "valor": "599,90",
       "desconto": "299.00",
@@ -126,5 +134,23 @@
       "tamanhos": [34, 35, 36, 37, 38, 39, 40],
       "destaque": false,
       "oferta": true
-  }
+  },
+
+  {
+    "id": 9,
+    "sku": "LAL10292",
+    "marca": "Adidas",
+    "nome": "Adidas Forum Bold",
+    "imagemDestaque": "tenis-principal-vect.png",
+    "imagens": ["tenis-forum-2.png","tenis-forum-3.png", "tenis_sobre_produto.png"],
+    "categoria": "5",
+    "cores": ["marrom"],
+    "valor": "599,90",
+    "desconto": "299.00",
+    "descricao": "Fascínio: a qualidade de usar este Air Max 1 feito à mão. Feito de couro premium, ferragens douradas metálicas e um forro incrivelmente macio, eles são a nova definição de estilo. A marca elevada refina o seu ajuste, enquanto a janela Air cristalina (inspirada na arquitetura francesa e celebrada pelo esporte e pela moda) permite que você veja o mundo do conforto. Amarre, porque não há como conter seu próximo movimento.",
+    "tamanhos": [34, 35, 36, 37, 38, 39, 40],
+    "destaque": false,
+    "oferta": true
+}
+
 ]
