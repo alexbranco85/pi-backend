@@ -18,6 +18,10 @@
 					<form action="/product" method="POST" enctype="multipart/form-data">
 						<div class="row product-detail">
 							<div class="col-12 col-md-6">
+								<label for="name" class="form-label">Id:</label>
+								<input type="text" id="sku" name="sku" placeholder="Informe o sku do produto" class="form-input">
+							</div>
+							<div class="col-12 col-md-6">
 								<label for="name" class="form-label">Sku:</label>
 								<input type="text" id="sku" name="sku" placeholder="Informe o sku do produto" class="form-input">
 							</div>
@@ -25,22 +29,51 @@
 								<label for="name" class="form-label">Marca:</label>
 								<input type="text" id="marca" name="marca" placeholder="Informe a marca do produto" class="form-input">
 							</div>
-						
 							<div class="col-12 col-md-6">
 								<label for="name" class="form-label">Nome:</label>
 								<input type="text" id="nome" name="nome" placeholder="Informe o nome do produto" class="form-input">
 							</div>
 							<div class="col-12 col-md-6">
-								<label for="price" class="form-label">Preço:</label>
+								<label for="imagemDestaque" class="form-label">Imagem destaque:</label>
+								<input type="text" id="imagemDestaque" name="imagemDestaque" placeholder="Informe o nome do produto" class="form-input">
+							</div>
+							<div class="col-12 col-md-6">
+								<label for="imagens" class="form-label">Imagens:</label>
+								<input type="text" id="imagens" name="imagens" placeholder="Informe o nome do produto" class="form-input">
+							</div>
+							<div class="col-12 col-md-6">
+								<label for="categoria" class="form-label">Categoria:</label>
+								<input type="text" id="categoria" name="categoria" placeholder="Informe o nome do produto" class="form-input">
+							</div>
+							<div class="col-12 col-md-6">
+								<label for="cores" class="form-label">Cores:</label>
+								<input type="text" id="cores" name="cores" placeholder="Informe as cores do produto" class="form-input">
+							</div>
+	
+						
+							<div class="col-12 col-md-6">
+								<label for="valor" class="form-label">Valor:</label>
 								<input type="text" id="valor" name="valor" placeholder="Informe o preço do produto" class="form-input">
 							</div>
 							<div class="col-12 col-md-6">
-								<label for="discount" class="form-label">Desconto:</label>
+								<label for="desconto" class="form-label">Valor com Desconto:</label>
 								<input type="text" id="desconto" name="desconto" placeholder="Informe o desconto do produto" class="form-input">
 							</div>
 							<div class="col-12">
-								<label for="description" class="form-label">Descrição:</label>
+								<label for="descricao" class="form-label">Descrição:</label>
 								<textarea name="descricao" id="descricao" class="form-input"></textarea>
+							</div>
+							<div class="col-12">
+								<label for="tamanhos" class="form-label">Tamanhos:</label>
+								<textarea name="tamanhos" id="tamanhos" class="form-input"></textarea>
+							</div>
+							<div class="col-12">
+								<label for="destaque" class="form-label">Destaque:</label>
+								<textarea name="destaque" id="destaque" class="form-input"></textarea>
+							</div>
+							<div class="col-12">
+								<label for="oferta" class="form-label">Oferta:</label>
+								<textarea name="oferta" id="oferta" class="form-input"></textarea>
 							</div>
 							<div class="col-12">
 								<button type="submit" class="buy-now-button">Salvar</button>
