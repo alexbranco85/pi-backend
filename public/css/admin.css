@@ -1,0 +1,9 @@
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.col-12 {
+    margin: 10px 0;
+}

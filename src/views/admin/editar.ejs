@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <!-- Include Head -->
-<%- include('../includes/head', { title: 'Editar Produto' }) %>
+<%- include('../includes/head', { title: 'Editar Produto', imports: '<link rel="stylesheet" href="/css/admin.css">' }) %>
 
   <body>
     <!-- Header -->
@@ -28,6 +28,10 @@
 								<label for="nome" class="form-label">Nome:</label>
 								<input type="text" id="nome" name="nome" placeholder="Informe o nome do produto" class="form-input" value="<%= productToEdit.nome %>">
 							</div>
+							<div class="col-12">
+								<label for="tamanhos" class="form-label">Tamanhos:</label>
+								<input name="tamanhos" id="tamanhos" class="form-input" value="<%= productToEdit.tamanhos %>"></input>
+							</div>
 							<div class="col-12 col-md-6">
 								<label for="imagemDestaque" class="form-label">Imagem destaque:</label>
 								<input type="text" id="imagemDestaque" name="imagemDestaque" placeholder="Informe o nome do produto" class="form-input" value="<%= productToEdit.imagemDestaque %>">
@@ -38,7 +42,14 @@
 							</div>
 							<div class="col-12 col-md-6">
 								<label for="categoria" class="form-label">Categoria:</label>
-								<input type="text" id="categoria" name="categoria" placeholder="Informe o nome do produto" class="form-input" value="<%= productToEdit.categoria %>">
+								
+								<select name="categoria" id="categoria">
+									<option value="1" <%= productToEdit.categoria == "Para Eles" ? 'selected' : '' %>>Para Eles</option>
+									<option value="2" <%- productToEdit.categoria == "Para Elas" ? 'selected' : '' %>>Para Elas</option>
+									<option value="3" <%- productToEdit.categoria == "Esportes" ? 'selected' : '' %>>Esportes</option>
+									<option value="5" <%- productToEdit.categoria == "Lançamentos" ? 'selected' : '' %>>Lançamentos</option>
+								</select>
+								
 							</div>
 							<div class="col-12 col-md-6">
 								<label for="cores" class="form-label">Cores:</label>
@@ -53,21 +64,26 @@
 								<input type="text" id="desconto" name="desconto" placeholder="Informe o desconto do produto" class="form-input" value="<%= productToEdit.desconto %>">
 							</div>
 							<div class="col-12">
-								<label for="descricao" class="form-label">Descrição:</label>
-								<textarea name="descricao" id="descricao" class="form-input" value="<%= productToEdit.descricao %>"></textarea>
-							</div>
-							<div class="col-12">
-								<label for="tamanhos" class="form-label">Tamanhos:</label>
-								<input name="tamanhos" id="tamanhos" class="form-input" value="<%= productToEdit.tamanhos %>"></input>
-							</div>
-							<div class="col-12">
 								<label for="destaque" class="form-label">Destaque:</label>
-								<input name="destaque" id="destaque" class="form-input" value="<%= productToEdit.destaque %>"></input>
+								<select name="destaque" id="destaque">
+									<option value="true" <%= productToEdit.destaque == "true" ? 'selected' : '' %>>Sim</option>
+									<option value="false" <%- productToEdit.destaque == "false" ? 'selected' : '' %>>Não</option>
+								</select>
 							</div>
 							<div class="col-12">
 								<label for="oferta" class="form-label">Oferta:</label>
-								<input name="oferta" id="oferta" class="form-input" value="<%= productToEdit.oferta %>"></input>
+								<select name="oferta" id="oferta">
+									<option value="true" <%= productToEdit.oferta == "true" ? 'selected' : '' %>>Sim</option>
+									<option value="false" <%- productToEdit.oferta == "false" ? 'selected' : '' %>>Não</option>
+								</select>
+								<!-- <input name="oferta" id="oferta" class="form-input" value="<%= productToEdit.oferta %>"></input> -->
 							</div>
+							<div class="col-12">
+								<label for="descricao" class="form-label">Descrição:</label>
+								<textarea name="descricao" id="descricao" class="form-input"><%= productToEdit.descricao %></textarea>
+							</div>
+							
+							
 							<div class="col-12">
 								<button type="submit" class="buy-now-button">Salvar</button>
 							</div>
