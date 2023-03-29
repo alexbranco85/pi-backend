@@ -26,7 +26,6 @@ const ProductController = {
   // Create product
   createEJS: (req, res) => {
     let image = ''
-
     let newProduct = {
       id: Number(products[products.length - 1].id) + 1,
       ...req.body,
@@ -44,20 +43,22 @@ const ProductController = {
 
 
   updateEJS: (req, res) => {
-    const { id } = req.params
-
+    const { id, nome } = req.params
+    
     const productIndex = products.findIndex(product => String(product.id) === id) // índice
     let productToEdit = products.find(product => product.id == id) // objeto
-
+    
     if (productIndex != -1) {
-      productToEdit = {
-        id: productToEdit.id,
-        ...req.body,
-      }
 
-      products[productIndex] = productToEdit // atualiza
 
-      res.redirect('/')
+        productToEdit = {
+          id: productToEdit.id,
+          ...req.body,
+        }
+
+        products[productIndex] = productToEdit // atualiza
+
+        res.redirect('/')
     }
     else return res.status(400).json({ error: 'Produto não encontrado.' })
   },
