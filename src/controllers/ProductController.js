@@ -19,32 +19,50 @@ const ProductController = {
       return res.json(product)
     else return res.status(400).json({ error: 'Produto não encontrado.' })
   },
-  create: (req, res) => {
-    products.push(req.body)
-    res.json(products)
+
+  createFormEJS: (req, res) => {
+    res.render('admin/criar')
   },
-  update: (req, res) => {
+  // Create product
+  createEJS: (req, res) => {
+    let image = ''
+
+    let newProduct = {
+      id: Number(products[products.length - 1].id) + 1,
+      ...req.body,
+      image: image
+    }
+    products.push(newProduct)
+    res.redirect('/')
+  },
+
+  updateFormEJS: (req, res) => {
+    const { id } = req.params
+    let product = products.find(product => product.id == id)
+    res.render('admin/editar', { product })
+  },
+
+
+  updateEJS: (req, res) => {
     const { id } = req.params
 
-    const productIndex = products.findIndex(product => String(product.id) === id)
+    const productIndex = products.findIndex(product => String(product.id) === id) // índice
+    let productToEdit = products.find(product => product.id == id) // objeto
 
     if (productIndex != -1) {
-      products[productIndex] = req.body
-      return res.json(products)
+      productToEdit = {
+        id: productToEdit.id,
+        ...req.body,
+      }
+
+      products[productIndex] = productToEdit // atualiza
+
+      res.redirect('/')
     }
     else return res.status(400).json({ error: 'Produto não encontrado.' })
   },
-  delete: (req, res) => {
-    const { id } = req.params
 
-    const productIndex = products.findIndex(product => String(product.id) === id)
 
-    if (productIndex != -1) {
-      products.splice(productIndex, 1)
-      return res.json(products)
-    }
-    else return res.status(400).json({ error: 'Produto não encontrado.' })
-  },
   // Detail from one product
   detailEJS: (req, res) => {
     let id = req.params.id
@@ -53,6 +71,17 @@ const ProductController = {
       product,
       toThousand
     })
+  },
+
+  deleteEJS: (req, res) => {
+    const { id } = req.params
+    const productIndex = products.findIndex(product => String(product.id) === id)
+
+    if (productIndex != -1) {
+      products.splice(productIndex, 1)
+      res.redirect('/admin')
+    }
+    else return res.status(400).json({ error: 'Produto não encontrado.' })
   }
 }
 module.exports = ProductController

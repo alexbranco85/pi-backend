@@ -7,17 +7,16 @@
     <!-- Header -->
     <%- include('../includes/header') %>
     <!-- /Header -->
-
-      <div class="container" style="padding: 50px 0;">
-        <div class="row">
-          <div class="col-12">
-            <h2>Você está editando: <i><%= productToEdit.nome %></i></h2>
-          </div>
-        </div>
+    <div class="container products-wrapper">
+      <div class="row">
         <div class="col-12">
-          <form action="/admin/editado/<%= productToEdit.sku %>?_method=PUT" method="POST" enctype="multipart/form-data">
-            <div>
-              <div>
+          <h2 class="products-title">Você está editando: <i><%= productToEdit.name %></i></h2>
+        </div>
+      </div>
+        <div class="col-12">
+          <form action="/product/<%= productToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <div class="row product-detail">
+              <div class="col-12 col-md-6">
                 <label for="name" class="form-label">Nome:</label>
                 <input
                   id="name"
@@ -28,29 +27,29 @@
                   value="<%= productToEdit.nome %>"
                 >
               </div>
-              <div>
+              <div class="col-12 col-md-6">
                 <label for="price" class="form-label">Preço:</label>
                 <input
                   id="price"
-                  type="number"
+                  type="text"
                   name="price"
                   placeholder="Informe o preço do produto"
                   class="form-input"
                   value="<%= productToEdit.valor %>"
                 >
               </div>
-              <div>
-                <label for="discount" class="form-label">Preço com desconto:</label>
+              <div class="col-12 col-md-6">
+                <label for="discount" class="form-label">Desconto:</label>
                 <input
                   id="discount"
-                  type="number"
+                  type="text"
                   name="discount"
                   placeholder="Informe o desconto do produto"
                   class="form-input"
                   value="<%= productToEdit.desconto %>"
                 >
               </div>
-              <div>
+              <div class="col-12">
                 <label for="description" class="form-label">Descrição:</label>
                 <textarea
                   id="description"
@@ -58,9 +57,9 @@
                   class="form-input"
                 ><%= productToEdit.descricao %></textarea>
               </div>
-              <div>
-                <button type="submit">Salvar</button>
-                <button>Cancelar</button>
+
+              <div class="col-12">
+                <button type="submit" class="buy-now-button">Salvar</button>
               </div>
             </div>
           </form>

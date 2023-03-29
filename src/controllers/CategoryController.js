@@ -9,6 +9,9 @@ const CategoryController = {
     const catProducts = products.filter(item => item.categoria == categoria.toLowerCase())
     const catName = cats.find(item => item.id == categoria)
     res.render('categoria', {catProducts, catName})
-  }
+  },
+  todos: (req, res) => {
+    res.render('todos', products)
+  },
 }
 module.exports = CategoryController

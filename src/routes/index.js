@@ -23,12 +23,22 @@ router.get('/produto/:sku', productController.showBySku)
 // ADMIN
 
 router.get('/admin', adminController.showAll);
+router.get('/admin/editar/:id', adminController.updateForm);
+router.put('/product/:id', productController.updateEJS)
 
-router.delete('/admin/excluir/:id', adminController.delete);
+router.get('/admin/criar', productController.createFormEJS)
+router.post('/product', productController.createEJS)
 
-router.get('/admin/editar/:sku', adminController.updateForm);
-router.put('/admin/editado/:sku', adminController.updateProduct)
+router.delete('/product/:id', productController.deleteEJS)
 
+router.get('/todos', categoryController.todos)
+// router.get('/product/create', productController.createFormEJS)
+
+// router.get('/product/update/:id', productController.updateFormEJS)
+
+// router.post('/product', upload.any(), productController.createEJS)
+
+// router.put('/product/:id', upload.any(), productController.updateEJS)
 
 
 module.exports = router

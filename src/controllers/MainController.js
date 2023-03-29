@@ -9,12 +9,6 @@ const MainController = {
       toThousand
     })
   },
-  sale: (req, res) => {
-    const saleProducts = products.filter(product => product.oferta === true);
-    res.render('index', {
-      saleproducts: saleProducts, toThousand
-    })
-  },
   search: (req, res) => {
     let search = req.query.keywords
     let productsToSearch = products.filter(product => product.nome.toLowerCase().includes(search))

@@ -2,7 +2,14 @@ const routes = require('./routes/index')
 const path = require("path")
 const express = require('express')
 const app = express()
+const methodOverride = require('method-override')
+
 app.use(express.json())
+// captura na forma de objeto literal tudo o que vem de um formulário
+app.use(express.urlencoded({ extended: false }))
+// converte as informações em formato JSON
+app.use(express.json())
+app.use(methodOverride('_method'))
 
 // instanciando como view engine
 app.set("view engine", "ejs")
