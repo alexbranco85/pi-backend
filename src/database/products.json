@@ -116,7 +116,7 @@
       "descricao": "Vestido com um bloco de cores Blue Haze e Turtledove. Esta oferta do New Balance 9060 vem construída em uma mistura de materiais de malha, camurça e couro. Outros detalhes incluem logotipos “N” bordados na parte central sobre uma sola de borracha de dois tons para completar o design.",
       "tamanhos": [34, 36, 37, 39, 40, 41, 42],
       "destaque": false,
-      "oferta": true
+      "oferta": false
   }
   ,
   {
@@ -167,7 +167,7 @@
     "descricao": "Vestido em camurça e amostras de couro premium de University Gold, Vivid Sulphur e Citron Tint, o -Pineapple- SB Dunk High vem em um sabor brilhante e suculento para os dias mais ensolarados que virão.",
     "tamanhos": [34, 35, 36, 37, 38, 39, 40],
     "destaque": false,
-    "oferta": true
+    "oferta": false
 },
 
 {
@@ -184,7 +184,7 @@
     "descricao": "Vans e Cobra Kai se uniram para uma coleção que celebra o karatê, a nostalgia e a juventude. Com as rivalidades esquentando na 5ª temporada, a Vans criou silhuetas clássicas da Vans para homenagear três dojos competindo no All-Valley Karate Championship. Quem será seu sensei?",
     "tamanhos": [34, 35, 36, 37, 38, 39, 40],
     "destaque": false,
-    "oferta": true
+    "oferta": false
 },
 
 {
@@ -201,7 +201,58 @@
     "descricao": "Para as garotas hype, as entusiastas das ruas, as criadoras de tendências – apresentamos o Mayze. Este modelo tem uma sola robusta para um visual que mostra quem você é, independentemente do estilo que você escolher.",
     "tamanhos": [34, 35, 36, 37, 38, 39, 40],
     "destaque": false,
-    "oferta": true
+    "oferta": false
+},
+
+{
+    "id": 13,
+    "sku": "MNA2316",
+    "marca": "Puma",
+    "nome": "Puma Velocity Nitro",
+    "imagemDestaque": "puma_velocity-nitro_p.png",
+    "imagens": ["puma_velocity-nitro_02.png","puma_velocity-nitro_03.png", "puma_velocity-nitro_04.png"],
+    "categoria": "1",
+    "cores": ["azul"],
+    "valor": "999,00",
+    "desconto": "899.00",
+    "descricao": "Inovador e extremamente confortável, o tênis Velocity Nitro 2 Running chegou para ser o seu mais novo parceiro de corrida. ",
+    "tamanhos": [34, 35, 36, 37, 38, 39, 40],
+    "destaque": false,
+    "oferta": false
+},
+
+{
+    "id": 14,
+    "sku": "ANA361609",
+    "marca": "Puma",
+    "nome": "RS-X SKELETOR PUMA X HE-MAN",
+    "imagemDestaque": "puma-x-he-man_p.png",
+    "imagens": ["puma-x-he-man_02.png","puma-x-he-man.png", "puma-x-he-man_03.png"],
+    "categoria": "3",
+    "cores": ["roxo"],
+    "valor": "899,00",
+    "desconto": "799.00",
+    "descricao": "Para comemorar o 40º aniversário da clássica série He-Man e os Defensores do Universo, essa versão do RS-X homenageia o principal antagonista do super-herói: Skeletor. ",
+    "tamanhos": [34, 35, 36, 37, 38, 39, 40],
+    "destaque": false,
+    "oferta": false
+},
+
+{
+    "id": 15,
+    "sku": "LLL8764783",
+    "marca": "Adidas",
+    "nome": "Adidas NMD_R1",
+    "imagemDestaque": "nmd_adidas.png",
+    "imagens": ["nmd_adidas_02.png","nmd_adidas_03.png", "nmd_adidas_04.png"],
+    "categoria": "4",
+    "cores": ["rosa"],
+    "valor": "899,00",
+    "desconto": "799.00",
+    "descricao": "Com este tênis Adidas NMD_R1, você tem um outro tipo de conforto, além de um visual que pode ser combinado com qualquer look.",
+    "tamanhos": [34, 35, 36, 37, 38, 39, 40],
+    "destaque": false,
+    "oferta": false
 }
 
 ]
