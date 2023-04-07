@@ -7,6 +7,7 @@ const quemSomosController = require('../controllers/QuemSomos.js')
 const categoryController = require('../controllers/CategoryController')
 const adminController = require('../controllers/AdminController')
 const minhaContaController = require('../controllers/MinhaContaController')
+const loginController = require('../controllers/LoginController')
 
 // # Main
 // GET ALL
@@ -15,6 +16,8 @@ router.get('/', mainController.index);
 router.get('/quemsomos', quemSomosController.index);
 
 router.get('/minhaconta', minhaContaController.index);
+
+router.get('/login', loginController.index);
 
 // GET ALL
 router.get('/search', mainController.search)
