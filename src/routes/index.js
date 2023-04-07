@@ -6,12 +6,15 @@ const productController = require('../controllers/ProductController')
 const quemSomosController = require('../controllers/QuemSomos.js')
 const categoryController = require('../controllers/CategoryController')
 const adminController = require('../controllers/AdminController')
+const minhaContaController = require('../controllers/MinhaContaController')
 
 // # Main
 // GET ALL
 router.get('/', mainController.index);
 
 router.get('/quemsomos', quemSomosController.index);
+
+router.get('/minhaconta', minhaContaController.index);
 
 // GET ALL
 router.get('/search', mainController.search)
