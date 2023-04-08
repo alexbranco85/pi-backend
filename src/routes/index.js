@@ -8,6 +8,7 @@ const categoryController = require('../controllers/CategoryController')
 const adminController = require('../controllers/AdminController')
 const minhaContaController = require('../controllers/MinhaContaController')
 const loginController = require('../controllers/LoginController')
+const cadastroController = require('../controllers/CadastroController')
 
 // # Main
 // GET ALL
@@ -18,6 +19,8 @@ router.get('/quemsomos', quemSomosController.index);
 router.get('/minhaconta', minhaContaController.index);
 
 router.get('/login', loginController.index);
+
+router.get('/cadastro', cadastroController.index);
 
 // GET ALL
 router.get('/search', mainController.search)
