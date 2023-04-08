@@ -2,7 +2,7 @@
 <html lang="PT-BR">
     
     <!-- Include Head -->
-<%- include('includes/head', {title: 'Sneakers house' }) %>
+<%- include('includes/head', {title: 'Sneakers House - Cadastro', imports: '<link rel="stylesheet" href="/css/login.css">' }) %>
 
 <body>
     <!-- Header -->
@@ -39,16 +39,16 @@
                             <input type="text" name="endereco" class="in-1">
                             <input type="number" name="numero" class="in-2">
                         </div>
-                        <label for="bairro">Bairro</label>
+                        <label for="bairro">Bairro</label>  
                         <input type="text">
                         <div class="label-line">
                             <label for="cidade">Cidade</label>
-                            <label for="estado">Estado<select id="estado" class="in-2"></select></label>
-                            
+                            <label for="estado">Estado</label>
                         </div>
+                        
                         <div class="input-line">
-                            <input type="text" name="cidade" class="in-1">
-                            <!--<input type="text" name="estado" class="in-2">-->
+                            <input type="text" name="cidade" class="in-3">
+                            <select name="estado" id="estado" ></select>
                         </div>
                         <label for="cep">CEP</label>
                         <input type="number"> 
