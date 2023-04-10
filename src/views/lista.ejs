@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<!-- Include Head -->
+<%- include('includes/head', { title: ' Sneakers House - Lista de desejos', imports: '<link rel="stylesheet" href="/css/listadedesejos.css">' }) %>
+
+<body>
+    <!-- Header -->
+    <%- include('includes/header') %>
+    <!--/Header -->
+
+    <main class="m-4">
+        <div class="container lista-de-desejos">
+            <ul class="lista-desejos-texto">
+                <li class="lista-desejos-texto-titulo">
+                    <div class="lista-desejos-titulo">
+                        <h2>LISTA DE DESEJOS</h2>
+                    </div>
+                </li>
+            </ul>
+            <ul class="lista-desejo-comandos">
+                <li class="lista-desejos-texto-compartilhar">
+                    <div class="lista-desejos-compartilhar-lista">Compartilhar lista</div>
+                </li>
+
+                <li class="lista-desejos-texto-nova-lista">
+                    <div class="lista-desejos-compartilhar-lista cl-red">Criar nova lista</div>
+                </li>
+            </ul>
+            <div class="lista-desejos-buscar-filtrar">
+                <div class="lista-desejos-buscar">
+                    <input type="text" class="list-search" placeholder="Buscar">
+                </div>
+                <div class="lista-desejos-filtrar">
+                    <h6>Filtrar ˆ</h6>
+                </div>
+
+            </div>
+
+            <div class="lista-produtos-produto">
+                <ul class="lista-desejo-lista-produtos">
+                    <li class="lista-desejo-lista-mayze">
+                        <div class="tenis-mayze-imagem">
+                            <img class="lista-desejo-produto" src="./img/puma-mayze.png" alt="">
+                        </div>
+                        <div class="tenis-mayze-informacoes">
+                            <h4>MAZE FEMININO</h4>
+                            <div class="imgem-valores corretos">
+                                <span class="valor">R$599,90</span>
+                            </div>
+                            <p class="tenis-cores">Cores: Roxo, rosa, amarelo e branco</p>
+                            <p class="tenis-tamanho">Tamanho: 36</p>
+                            <h5 class="produto-quantidade">Quantidade</h5>
+                            <div class="escolhertamanho">
+                                <div class="escolhertamanho">
+                                    <select class="select-qtdade-box">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="bl-2">
+                                <button class="desejos-adicionar-carrinho-btn">Adicionar ao carrinho</button>
+                                <a href=""><span class="material-symbols-outlined botao-remover bt-remover">delete</span></a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!--segundo produto-->
+
+                    <li class="lista-desejo-lista-mayze">
+                        <div class="tenis-mayze-imagem">
+                            <img class="lista-desejo-produto" src="./img/nike-colorido-atual.png" alt="">
+                        </div>
+
+                        <div class="tenis-mayze-informacoes">
+                            <h4>MAZE FEMININO</h4>
+                            <div class="imgem-valores corretos">
+                                <span class="valor">R$599,90</span>
+                            </div>
+                            <p class="tenis-cores">Cores: Roxo, rosa, amarelo e branco</p>
+                            <p class="tenis-tamanho">Tamanho: 36</p>
+                            <h5 class="produto-quantidade">Quantidade</h5>
+                            <div class="escolhertamanho">
+                                <div class="escolhertamanho">
+                                    <select class="select-qtdade-box">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="bl-2">
+                                <button class="desejos-adicionar-carrinho-btn">Adicionar ao carrinho</button>
+                                <a href=""><span class="material-symbols-outlined botao-remover bt-remover">delete</span></a>
+                            </div>
+                        </div>
+                    </li>
+                    <!--tenis tres-->
+                    <li class="lista-desejo-lista-mayze">
+                        <div class="tenis-mayze-imagem">
+                            <img  src="./img/nike-sb-atualizado.png" alt="">
+                        </div>
+
+                        <div class="tenis-mayze-informacoes">
+                            <h4>MAZE FEMININO</h4>
+                            <div class="imgem-valores corretos">
+                                <span class="valor">R$599,90</span>
+                            </div>
+                            <p class="tenis-cores">Cores: Roxo, rosa, amarelo e branco</p>
+                            <p class="tenis-tamanho">Tamanho: 36</p>
+                            <h5 class="produto-quantidade">Quantidade</h5>
+                            <div class="escolhertamanho">
+                                <div class="escolhertamanho">
+                                    <select class="select-qtdade-box">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="bl-2">
+                                <button class="desejos-adicionar-carrinho-btn">Adicionar ao carrinho</button>
+                                <a href=""><span class="material-symbols-outlined botao-remover bt-remover">delete</span></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="bt-carrinho">
+                    <button class="botao-vermelho">ADICIONAR TODOS AO CARRINHO</button>
+                </div>
+                <!-- seção de produtos para adicionar à lista de desejos -->
+                <section class="add-to-list">
+                    <h2 class="produto-infos-titulo pit-1">ADICIONE À SUA LISTA DE DESEJOS</h2>
+                    <ul class="lista-categorias">
+                        <li>
+                            <div class="lista-produtos">
+                                <img src="./img/nizza-trek.png" alt="">
+                                <h4>Nizza Trek</h4>
+                                <span class="valor">R$599,90</span>
+                                <button class="botao-eu-quero">ADICIONAR</button>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="lista-produtos">
+                                <img src="./img/nizza-trek.png" alt="">
+                                <h4>Nizza Trek</h4>
+                                <span class="valor">R$599,90</span>
+                                <button class="botao-eu-quero">ADICIONAR</button>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="lista-produtos">
+                                <img src="./img/nizza-trek.png" alt="">
+                                <h4>Nizza Trek</h4>
+                                <span class="valor">R$599,90</span>
+                                <button class="botao-eu-quero">ADICIONAR</button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="lista-produtos">
+                                <img src="./img/nizza-trek.png" alt="">
+                                <h4>Nizza Trek</h4>
+                                <span class="valor">R$599,90</span>
+                                <button class="botao-eu-quero">ADICIONAR</button>
+                            </div>
+                        </li>
+            </section>
+        </div>
+    </main>
+
+   <!-- footer -->
+   <%- include('includes/footer') %>
+    
+   <!--/footer-->
+
+</body>
+
+</html>

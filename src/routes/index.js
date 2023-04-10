@@ -9,6 +9,8 @@ const adminController = require('../controllers/AdminController')
 const minhaContaController = require('../controllers/MinhaContaController')
 const loginController = require('../controllers/LoginController')
 const cadastroController = require('../controllers/CadastroController')
+const carrinhoController = require('../controllers/CarrinhoController')
+const listaController = require('../controllers/ListaController')
 
 // # Main
 // GET ALL
@@ -21,6 +23,10 @@ router.get('/minhaconta', minhaContaController.index);
 router.get('/login', loginController.index);
 
 router.get('/cadastro', cadastroController.index);
+
+router.get('/carrinho', carrinhoController.index);
+
+router.get('/listadedesejos', listaController.index);
 
 // GET ALL
 router.get('/search', mainController.search)
