@@ -1,0 +1,43 @@
+.link-pagina-atual a {color: red;}  
+
+.login, .cadastro{border: black solid 1px; margin: auto; border-radius: 10px; padding: 2rem 3rem;}
+.login{width:calc(70% - 4rem)}
+
+#input-login, #input-cadastro {display: flex; flex-direction: column;}
+
+.button-login {display: flex; justify-content: space-between; align-items: center;}
+.button-login button, .button-cadastro button{border: none; padding: 10px 60px; margin-left: 0px;}
+.button-cadastro {display: flex; justify-content: flex-end; margin-top: 24px; margin-bottom: 24px;}
+
+.esqueci-senha{color: black;}
+.msg-criarConta{margin: auto; text-align: center;}
+h3 strong{color: red; padding-right: 10px;}
+h3{font-weight: 400; font-size: 1em;}
+
+.redesocial-login {display: flex; justify-content: center; margin: 20px 0px;}
+.redesocial-login img{padding: 10px;}
+.redesocial-login span{padding-top: 10px;}
+
+.indicacao-menu-navbar {background: #F5F5F5; padding: 1px;}
+.indicacao-menu-navbar ul {display: flex; list-style: none}
+.indicacao-menu-navbar ul a {text-decoration: none; padding: 10px;}
+
+.link-pagina-atual a {color: red;}  
+h2{text-align: left; margin: 0;}
+
+.esqueci-senha{color: black;}
+.msg-criarConta{margin: auto; text-align: center;}
+h3 strong{color: red; padding-right: 10px;}
+h3{font-weight: 400; font-size: 1em;}
+
+
+.flex-2 {display: flex; width: 1200px; gap: 10px; margin: auto;}
+
+.input-line select {
+    border: black solid 1px; margin: auto; border-radius: 10px; padding: 0.45rem;
+    width: 24%;
+}
+
+.input-line .in-3,
+.input-line .in-1 {width: 70%; margin-right: 5px;}
+.input-line .in-2{width: 21%;}

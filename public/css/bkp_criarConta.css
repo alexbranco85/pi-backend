@@ -45,8 +45,10 @@
 }
 .criarConta .input-box{
     margin-bottom: 1rem;
-    
+}
 
+select {
+    color: red;
 }
 
 .endereco{

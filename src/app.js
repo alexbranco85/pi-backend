@@ -16,9 +16,11 @@ app.set("views", path.resolve("src", "views"))
 // liberando acesso a pasta public
 app.use(express.static(path.resolve("public")))
 
+
 /**
  * Rotas
  */
+
 app.use(routes)
 
 app.listen(3000, () => {
