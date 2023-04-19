@@ -3,6 +3,7 @@ const products = require('../database/products.json')
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
 
 const ProductController = {
+
   showAll: (req, res) => {
     res.json(products)
   },
@@ -44,21 +45,21 @@ const ProductController = {
 
   updateEJS: (req, res) => {
     const { id, nome } = req.params
-    
+
     const productIndex = products.findIndex(product => String(product.id) === id) // índice
     let productToEdit = products.find(product => product.id == id) // objeto
-    
+
     if (productIndex != -1) {
 
 
-        productToEdit = {
-          id: productToEdit.id,
-          ...req.body,
-        }
+      productToEdit = {
+        id: productToEdit.id,
+        ...req.body,
+      }
 
-        products[productIndex] = productToEdit // atualiza
+      products[productIndex] = productToEdit // atualiza
 
-        res.redirect('/')
+      res.redirect('/')
     }
     else return res.status(400).json({ error: 'Produto não encontrado.' })
   },

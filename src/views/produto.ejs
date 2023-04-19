@@ -1,12 +1,11 @@
 <html lang="PT-BR">
 
 <!-- Include Head -->
-<%- include('includes/head', {title: "Sneaker's House - " + product.nome , imports: '<link rel="stylesheet" href="/css/produto.css">' }) %>
-
+<%- include('includes/head', {title: "Sneaker's House - " + product.nome ,
+    imports: '<link rel="stylesheet" href="/css/produto.css">' }) %>
 
     <body>
         <%- include('includes/header') %>
-
             <main>
                 <section>
                     <div class="container produto-unico" id="single-product">
@@ -25,38 +24,43 @@
                                 <h3 class="produto-infos-valor">de R$ <%= product.valor %> por <span
                                             style="font-size:20px;"><strong>R$ <%= product.desconto %></strong></span>
                                 </h3>
-                                <% const parcelado = product.desconto / 10 %>
-                                <span class="produto-infos-parcelamento">em até 10x R$ <%= parcelado.toFixed(2).toString().replace('.', ',') %> sem
-                                        juros</span>
-                                <div class="quantidade-likes-dislike">
-                                    <img src="../images/avaliacoes_5.png" alt="">
-                                    <h6>(13 avaliações)</h6>
-                                </div>
-                                <div class="escolhertamanho">
-                                    <h3 class="produto-infos-tamanhos-titulo">Tamanhos</h3>
-                                    <% if(Array.isArray(product.tamanhos)){ %>
-                                        <select class="select-qtdade-box" id="size"></select>
-                                        <% product.tamanhos.forEach(size=> { %>
-                                            <option value=<%=size %>><%= size %>
-                                            </option>
-                                        <% }); %>
-                                    </select>
-                                    <% } else { %>
-                                        <p><% product.tamanhos %></p>
-                                    <% }%>
-                                </div>
-                                <div class="escolhercores">
-                                    <h3 class="produto-infos-cores-titulo">Cores</h3>
+                                <% const parcelado=product.desconto / 10 %>
+                                    <span class="produto-infos-parcelamento">em até 10x R$ <%=
+                                            parcelado.toFixed(2).toString().replace('.', ',' ) %> sem
+                                            juros</span>
+                                    <div class="quantidade-likes-dislike">
+                                        <img src="../images/avaliacoes_5.png" alt="">
+                                        <h6>(13 avaliações)</h6>
+                                    </div>
+                                    <div class="escolhertamanho">
+                                        <h3 class="produto-infos-tamanhos-titulo">Tamanhos</h3>
+                                        <% if(Array.isArray(product.tamanhos)){ %>
+                                            <select class="select-qtdade-box" id="size">
+                                                <% product.tamanhos.forEach(size=> { %>
+                                                    <option value=<%=size %>><%= size %>
+                                                    </option>
+                                                    <% }); %>
+                                            </select>
+                                            <% } else { %>
+                                                <p>
+                                                    <% product.tamanhos %>
+                                                </p>
+                                                <% }%>
+                                    </div>
+                                    <div class="escolhercores">
+                                        <h3 class="produto-infos-cores-titulo">Cores</h3>
 
-                                    <% if(Array.isArray(product.cores)){ %>
-                                        <% product.cores.forEach(color=> { %>
-                                            <div class='colors color-<%= color %>'></div>
-                                        <% }); %>
-                                    <% } else { %>
-                                        <p><% product.cores %></p>
-                                    <% }%>
+                                        <% if(Array.isArray(product.cores)){ %>
+                                            <% product.cores.forEach(color=> { %>
+                                                <div class='colors color-<%= color %>'></div>
+                                                <% }); %>
+                                                    <% } else { %>
+                                                        <p>
+                                                            <% product.cores %>
+                                                        </p>
+                                                        <% }%>
 
-                                </div>
+                                    </div>
                             </div>
                             <div class="produto-infos-entrega">
                                 <button class="botao-carrinho botao-eu-quero" id="cartAdd">ADICIONAR AO
@@ -90,7 +94,6 @@
                                 alt="">
                         </div>
                     </div>
-
                 </section>
 
 
@@ -171,11 +174,7 @@
             </div>
 
         </div> -->
-
-
-
             </main>
-
             <%- include('includes/footer') %>
                 <div id="modal-login" class="modal-container">
                     <div class="modal">
