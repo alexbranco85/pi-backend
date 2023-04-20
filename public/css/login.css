@@ -7,7 +7,7 @@
 
 .button-login {display: flex; justify-content: space-between; align-items: center;}
 .button-login button, .button-cadastro button{border: none; padding: 10px 60px; margin-left: 0px;}
-.button-cadastro {display: flex; justify-content: flex-end; margin-top: 24px; margin-bottom: 24px;}
+.button-cadastro {display: flex; justify-content: flex-end; margin-top: 24px; margin-bottom: 0px;}
 
 .esqueci-senha{color: black;}
 .msg-criarConta{margin: auto; text-align: center;}

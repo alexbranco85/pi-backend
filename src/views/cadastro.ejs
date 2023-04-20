@@ -1,72 +1,92 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
-    
-    <!-- Include Head -->
-<%- include('includes/head', {title: 'Sneakers House - Cadastro', imports: '<link rel="stylesheet" href="/css/login.css">' }) %>
 
-<body>
-    <!-- Header -->
-    <%- include('includes/header') %>
-    <!--/Header -->
-    <main class="m-4">
-        <div class="flex-2">
-            <section class="container">
-                <div class="cadastro">
-                    <h2>INFORMAÇÕES PESSOAIS</h2>
-                    <div id="input-cadastro">
-                        <label for="nome">Nome Completo</label>
-                        <input type="text" name="nome">
-                        <label for="email">Endereço de E-mail</label>
-                        <input type="email">
-                        <label for="cpf">CPF</label>
-                        <input type="number">
-                        <label for="rg">RG</label>
-                        <input type="number">
-                        <label for="data-nascimento">Data de Nascimento</label>
-                        <input type="date">
-                    </div>
+<!-- Include Head -->
+<%- include('includes/head', {title: 'Sneakers House - Cadastro' ,
+    imports: '<link rel="stylesheet" href="/css/login.css">' }) %>
+
+    <body>
+        <!-- Header -->
+        <%- include('includes/header') %>
+            <!--/Header -->
+            <main class="m-4">
+                <div class="flex-2">
+                    <section class="container">
+                        <div class="cadastro">
+                            <h2>INFORMAÇÕES PESSOAIS</h2>
+                            <div id="input-cadastro">
+                                <label for="nome">Nome Completo</label>
+                                <input type="text" name="nome">
+                                <label for="email">Endereço de E-mail</label>
+                                <input type="email">
+                                <div class="flex">
+                                    <div class="coluna50">
+                                        <label for="cpf">CPF</label>
+                                        <input type="number">
+                                    </div>
+                                    <div class="coluna50">
+                                        <label for="rg">RG</label>
+                                        <input type="number">
+                                    </div>
+                                </div>
+                                <label for="data-nascimento">Data de Nascimento</label>
+                                <input type="date">
+                            </div>
+                        </div>
+                    </section>
+                    <section class="container">
+                        <div class="cadastro">
+                            <h2>ENDEREÇO</h2>
+                            <div id="input-cadastro">
+                                <div>
+                                    <label for="cep">CEP</label>
+                                    <input id="cep" type="number">
+                                </div>
+                                <div class="flex">
+                                    <div class="coluna70">
+                                        <label for="endereco">Logradouro</label>
+                                        <input type="text" name="endereco" id="logradouro">
+                                    </div>
+                                    <div class="coluna25">
+                                        <label for="numero">Número</label>
+                                        <input type="number" name="numero">
+                                    </div>
+                                </div>
+                                <div class="coluna25">
+
+                                </div>
+                                <div class="flex">
+                                    <div class="coluna35">
+                                        <label for="bairro">Bairro</label>
+                                        <input type="text" id="bairro">
+                                    </div>
+                                    <div class="coluna35">
+                                        <label for="cidade">Cidade</label>
+                                        <input id="cidade" type="text" name="cidade">
+                                    </div>
+                                    <div class="coluna25">
+                                        <label for="estado">Estado</label>
+                                        <select name="estado" id="estado"></select>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="button-cadastro">
+                                <button class="botao-vermelho">Entrar</button>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-            </section>
-            <section class="container">
-                <div class="cadastro">
-                    <h2>ENDEREÇO</h2>
-                    <div id="input-cadastro">
-                        <div class="label-line">
-                            <label for="endereco">Logradouro</label>
-                            <label for="numero">Número</label>
-                        </div>
-                        <div class="input-line">
-                            <input type="text" name="endereco" class="in-1">
-                            <input type="number" name="numero" class="in-2">
-                        </div>
-                        <label for="bairro">Bairro</label>  
-                        <input type="text">
-                        <div class="label-line">
-                            <label for="cidade">Cidade</label>
-                            <label for="estado">Estado</label>
-                        </div>
-                        
-                        <div class="input-line">
-                            <input type="text" name="cidade" class="in-3">
-                            <select name="estado" id="estado" ></select>
-                        </div>
-                        <label for="cep">CEP</label>
-                        <input type="number"> 
-                    </div>
-                    <div class="button-cadastro">
-                        <button class="botao-vermelho">Entrar</button>
-                    </div>
+                <div class="msg-criarConta">
+                    <h3><strong>Já tem uma conta? </strong><a href="http://localhost:3000/login">Clique aqui para
+                            entrar.</a></h3>
                 </div>
-            </section>
-        </div>
-        <div class="msg-criarConta">
-            <h3><strong>Já tem uma conta? </strong><a href="http://localhost:3000/login">Clique aqui para entrar.</a></h3>
-        </div>
-    </main>
-    <!-- footer -->
-    <%- include('includes/footer') %>
-    <!-- /footer -->
-    <script src="/js/cadastro.js"></script>
-</body>
+            </main>
+            <!-- footer -->
+            <%- include('includes/footer') %>
+                <!-- /footer -->
+                <script src="/js/cadastro.js"></script>
+    </body>
 
 </html>
