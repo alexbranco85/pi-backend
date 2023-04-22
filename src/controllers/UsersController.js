@@ -5,12 +5,9 @@ const jwt = require('jsonwebtoken')
 const users = require('../database/users.json')
 
 const UserController = {
-
-
   index: (req, res) => {
     res.render('login')
   },
-
 
   // Create form user - View
   createFormEJS: (req, res) => {
