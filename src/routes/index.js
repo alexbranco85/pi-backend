@@ -24,7 +24,7 @@ router.get('/quemsomos', quemSomosController.index);
 
 router.get('/minhaconta', minhaContaController.index);
 
-router.get('/login', userController.index);
+router.get('/login', userController.loginEJS);
 
 router.get('/cadastro', cadastroController.index);
 
@@ -69,12 +69,12 @@ router.post('/login', userController.loginEJS)
 // GET - EJS Create Form - View
 router.get('/user/create', userController.createFormEJS)
 // POST - EJS Create
-router.post(
-    '/user',
-    body('name')
-        .notEmpty()
-        .withMessage('Nome do Usuário deve ser informado!'),
-    userController.createEJS
-)
+// router.post(
+//     '/user',
+//     body('name')
+//         .notEmpty()
+//         .withMessage('Nome do Usuário deve ser informado!'),
+//     userController.createEJS
+// )
 
 module.exports = router
