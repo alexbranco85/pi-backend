@@ -8,10 +8,9 @@ const categoryController = require('../controllers/CategoryController')
 const adminController = require('../controllers/AdminController')
 const minhaContaController = require('../controllers/MinhaContaController')
 const loginController = require('../controllers/LoginController')
-const cadastroController = require('../controllers/CadastroController')
 const carrinhoController = require('../controllers/CarrinhoController')
 const listaController = require('../controllers/ListaController')
-const userController = require('../controllers/UsersController')
+const userController = require('../controllers/UserController')
 // # Main
 // Middlewares
 const auth = require('../middlewares/auth')
@@ -25,8 +24,6 @@ router.get('/quemsomos', quemSomosController.index);
 router.get('/minhaconta', minhaContaController.index);
 
 router.get('/login', userController.loginEJS);
-
-router.get('/cadastro', cadastroController.index);
 
 router.get('/carrinho', carrinhoController.index);
 
@@ -51,13 +48,6 @@ router.post('/product', auth, productController.createEJS)
 router.delete('/product/:id', auth, productController.deleteEJS)
 
 router.get('/todos', categoryController.todos)
-// router.get('/product/create', productController.createFormEJS)
-
-// router.get('/product/update/:id', productController.updateFormEJS)
-
-// router.post('/product', upload.any(), productController.createEJS)
-
-// router.put('/product/:id', upload.any(), productController.updateEJS)
 
 // # Auth
 // GET - EJS Login Form - View
@@ -67,14 +57,11 @@ router.post('/login', userController.loginEJS)
 
 // # User
 // GET - EJS Create Form - View
-router.get('/user/create', userController.createFormEJS)
+router.get('/cadastro', userController.createFormEJS)
 // POST - EJS Create
-// router.post(
-//     '/user',
-//     body('name')
-//         .notEmpty()
-//         .withMessage('Nome do Usuário deve ser informado!'),
-//     userController.createEJS
-// )
+router.post(
+    '/user',
+    userController.createEJS
+)
 
 module.exports = router
