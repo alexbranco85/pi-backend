@@ -11,13 +11,13 @@ const UserController = {
 
   // Create form user - View
   createFormEJS: (req, res) => {
-    res.render('user-create-form')
+    res.render('cadastro')
   },
   // Create user
   createEJS: (req, res) => {
     const errors = validationResult(req)
     if (!errors.isEmpty())
-      res.render('user-create-form', { errors: errors.mapped() }) // ou array()
+      res.render('cadastro', { errors: errors.mapped() }) // ou array()
 
     const user = users.find(user => user.email === req.body.email) // encontra o usuário através do e-mail - e retorna o objeto
 
@@ -33,8 +33,10 @@ const UserController = {
 
       users.push(newUser)
 
+      console.log('users: ', users)
+
       res.redirect('/')
-    } else res.render('user-create-form', { errors: [{ msg: "Usuário já cadastrado!" }] })
+    } else res.render('cadastro', { errors: [{ msg: "Usuário já cadastrado!" }] })
   },
   // Login form user - View
   loginFormEJS: (req, res) => {
