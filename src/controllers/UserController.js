@@ -20,8 +20,9 @@ const UserController = {
       res.render('cadastro', { errors: errors.mapped() }) // ou array()
 
     const user = users.find(user => user.email === req.body.email) // encontra o usuário através do e-mail - e retorna o objeto
+    const cpf = users.find(user => user.cpf === req.body.cpf) // encontra o usuário através do e-mail - e retorna o objeto
 
-    if (!user) {
+    if (!user && !cpf) {
       let newUser = {
         id: users.length > 0 ? Number(users[users.length - 1].id) + 1 : 1,
         ...req.body
@@ -47,9 +48,9 @@ const UserController = {
     const user = users.find(user => user.email === req.body.email) // encontra o usuário através do e-mail - e retorna o objeto
 
     if (user && bcrypt.compareSync(req.body.pwd, user.pwd)) { // compara a senha recebida no body com a senha gravada no banco de dados
-      const token = jwt.sign({ id: user.id, email: user.email }, 'segredo') // gera o token do usuário com JWT
+      const token = jwt.sign({ id: user.id, email: user.email }, 'secretKey') // gera o token do usuário com JWT
+      
       res.cookie('token', token, { maxAge: 2592000000 }) // expira em 30 dias
-
       res.redirect('/')
     } else res.render('login', { errors: [{ msg: "Usuário ou Senha incorretos!" }] })
   }

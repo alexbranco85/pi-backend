@@ -21,13 +21,13 @@ router.get('/', mainController.index);
 
 router.get('/quemsomos', quemSomosController.index);
 
-router.get('/minhaconta', minhaContaController.index);
+router.get('/minhaconta', auth, minhaContaController.index);
 
 router.get('/login', userController.loginEJS);
 
 router.get('/carrinho', carrinhoController.index);
 
-router.get('/listadedesejos', listaController.index);
+router.get('/listadedesejos', auth, listaController.index);
 
 // GET ALL
 router.get('/search', mainController.search)
@@ -38,7 +38,7 @@ router.get('/produto/:sku', auth, productController.showBySku)
 
 // ADMIN
 
-router.get('/admin', adminController.showAll);
+router.get('/admin', auth, adminController.showAll);
 router.get('/admin/editar/:id', auth, adminController.updateForm);
 router.put('/product/:id', auth, productController.updateEJS)
 
