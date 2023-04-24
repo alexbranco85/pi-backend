@@ -49,10 +49,10 @@ const UserController = {
 
     if (user && bcrypt.compareSync(req.body.pwd, user.pwd)) { // compara a senha recebida no body com a senha gravada no banco de dados
       const token = jwt.sign({ id: user.id, email: user.email }, 'secretKey') // gera o token do usuário com JWT
-      
+      res.cookie('userName', user.nome, { maxAge: 2592000000 })
       res.cookie('token', token, { maxAge: 2592000000 }) // expira em 30 dias
       res.redirect('/')
-    } else res.render('login', { errors: [{ msg: "Usuário ou Senha incorretos!" }] })
+    } else res.render('login')
   }
 }
 module.exports = UserController

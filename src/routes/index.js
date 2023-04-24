@@ -34,7 +34,7 @@ router.get('/search', mainController.search)
 
 router.get('/categoria/:categoria', categoryController.showAll)
 
-router.get('/produto/:sku', auth, productController.showBySku)
+router.get('/produto/:sku', productController.showBySku)
 
 // ADMIN
 
