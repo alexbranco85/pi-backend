@@ -7,13 +7,17 @@ const quemSomosController = require('../controllers/QuemSomos.js')
 const categoryController = require('../controllers/CategoryController')
 const adminController = require('../controllers/AdminController')
 const minhaContaController = require('../controllers/MinhaContaController')
-const loginController = require('../controllers/LoginController')
 const carrinhoController = require('../controllers/CarrinhoController')
 const listaController = require('../controllers/ListaController')
 const userController = require('../controllers/UserController')
 // # Main
 // Middlewares
 const auth = require('../middlewares/auth')
+const filterController = require('../controllers/FilterController')
+
+router.get('/produtos/filter', (req, res) => {
+    res.send(req.query)
+})
 
 
 // GET ALL
@@ -34,6 +38,8 @@ router.get('/search', mainController.search)
 
 router.get('/categoria/:categoria', categoryController.showAll)
 
+router.post('/filter', filterController.filter)
+
 router.get('/produto/:sku', productController.showBySku)
 
 // ADMIN
@@ -47,7 +53,7 @@ router.post('/product', auth, productController.createEJS)
 
 router.delete('/product/:id', auth, productController.deleteEJS)
 
-router.get('/todos', categoryController.todos)
+router.get('/todos', categoryController.all)
 
 // # Auth
 // GET - EJS Login Form - View

@@ -6,15 +6,21 @@
 
     <body>
         <!-- Header -->
-        <%- include('includes/header', {title: Todos os Produtos }) %>
+        <%- include('includes/header', {title: "Todos" }) %>
             <!--/Header -->
 
             <!-- main paraElas-->
             <main class="m-4">
                 <section class="container titulo-categoria">
-                    <h2>Todos os Produtos</h2>
+                    <h2>
+                        Todos os Produtos
+                    </h2>
                     <div class="result-pag">
                         <h3>427 itens | Resultados por página:</h3>
+
+                        <form action="/search" method="get" class="search-form">
+                            <input type="text" name="keywords" class="header-search" placeholder="Buscar">
+                        </form>
                         <select name="pag" id="select-qtdade-pag">
                             <option value="5">5</option>
                             <option value="10">10</option>
@@ -35,28 +41,15 @@
                         </div>
                         <div class="filter-marca filter-border">
                             <h3>FILTRAR POR MARCA</h3>
-                            <form action="# " class="form-marca">
-                                <span>
-                                    <input type="checkbox" name="vans" id="vans">
-                                    <label for="vans">Vans</label>
-                                </span>
-                                <span>
-                                    <input type="checkbox" name="adidas" id="adidas">
-                                    <label for="adidas">Adidas</label>
-                                </span>
-                                <span>
-                                    <input type="checkbox" name="asics" id="asics">
-                                    <label for="asics">Asics</label>
-                                </span>
-                                <span>
-                                    <input type="checkbox" name="nike" id="nike">
-                                    <label for="nike">Nike</label>
-                                </span>
-                                <span>
-                                    <input type="checkbox" name="puma" id="puma">
-                                    <label for="puma">Puma</label>
-                                </span>
-                                <a href="#" type="submit" class="button-filter">APLICAR</a>
+                            <form action="/filter" class="form-marca" method="post">
+                                <select name="marca" id="marca">
+                                    <option value="">--</option>
+                                    <option value="Adidas">Adidas</option>
+                                    <option value="Nike">Nike</option>
+                                    <option value="Puma">Puma</option>
+                                    <option value="Vans">Vans</option>
+                                </select>
+                                <button type="submit" class="button-filter">APLICAR</button>
                             </form>
                         </div>
                         <div class="filter-tipo filter-border">
@@ -116,7 +109,7 @@
 
                     <div class="grid-produtos">
                         <ul class="lista-categorias">
-                            <% products.forEach(item => { %>
+                            <% products.forEach(item=> { %>
                                 <li class="lista-produtos">
                                     <a href="../produto/<%= item.sku %>"><img
                                             src="../images/produtos/<%= item.imagemDestaque %>"></a>
