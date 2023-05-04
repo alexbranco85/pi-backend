@@ -14,7 +14,7 @@ const filterController = {
       //     ? product.price >= minPrice && product.price <= maxPrice
       //     : true;
       return isBrandMatch
-      //  && isTypeMatch && isSizeMatch && isPriceMatch;
+      // && isTypeMatch && isSizeMatch && isPriceMatch;
     });
     res.render('todos', { products: filteredProducts });
   },
