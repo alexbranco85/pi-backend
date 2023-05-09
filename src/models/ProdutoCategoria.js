@@ -10,4 +10,6 @@ module.exports = (sequelize, DataType) => {
         tableName: 'produto_categoria',
         timestamps: false
     })
+
+    return ProdutoCategoria
 }

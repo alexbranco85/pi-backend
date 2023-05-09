@@ -30,4 +30,6 @@ module.exports = (sequelize, DataType) => {
         tableName: 'usuario',
         timestamps: false
     })
+
+    return Usuario
 }

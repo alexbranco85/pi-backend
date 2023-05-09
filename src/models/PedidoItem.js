@@ -13,4 +13,6 @@ module.exports = (sequelize, DataType) => {
         tableName: 'pedido_item',
         timestamps: false
     })
+
+    return PedidoItem
 }
