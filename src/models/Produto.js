@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataType) => {
     const Produto = sequelize.define('Produto', {
-    id_produto: {
+    id: {
         type: DataType.INTEGER,
         primaryKey: true,
         autoIncrement: true
@@ -9,14 +9,14 @@ module.exports = (sequelize, DataType) => {
     marca: DataType.STRING(45),
     nome: DataType.STRING(100),
     imagemDestaque: DataType.STRING(100),
-    imagen: DataType.STRING(150),
+    imagem: DataType.STRING(150),
     cor: DataType.STRING(45),
     valor: DataType.DECIMAL(10, 2),
     desconto: DataType.DECIMAL(10,2),
     descricao: DataType.STRING,
     tamanho: DataType.INTEGER,
-    destaque: DataType.BOOLEAN,
-    oferta: DataType.BOOLEAN,
+    destaque: DataType.INTEGER,
+    oferta: DataType.INTEGER,
     id_produto_categoria: {
         type: DataType.INTEGER,
         foreignKey: true

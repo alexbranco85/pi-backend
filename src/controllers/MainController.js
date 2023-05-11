@@ -14,13 +14,12 @@ const MainController = {
       products,
       toThousand
     })
-
-
   } catch (error) {
     res.status(400).json({ error })
     
-  }
-},
+   }
+  },
+
 search: (req, res) => {
   let search = req.query.keywords
   let productsToSearch = products.filter(product => product.nome.toLowerCase().includes(search))

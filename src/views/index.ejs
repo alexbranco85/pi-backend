@@ -51,7 +51,7 @@
           <h2>AS MELHORES <strong>OFERTAS</strong></h2>
           <ul class="lista-categorias lc2" id="ofertas-hom  e">
 
-            <% const sales=products.filter(item=> item.oferta === "true");
+            <% const sales=products.filter(item=> item.oferta === 1);
               sales.forEach(item => {%>
 
               <li class="lista-produtos">
@@ -87,7 +87,7 @@
           <h2>SEU <strong>ESTILO</strong> COMBINA COM ELES</h2>
 
           <ul class="lista-categorias" id="destaquesHome">
-            <% const featured=products.filter(item=> item.destaque === "true");
+            <% const featured=products.filter(item=> item.destaque === 1);
               featured.forEach(item => {%>
               <li class="lista-produtos">
                 <a href="produto/<%= item.sku %>"><img src="../images/produtos/<%= item.imagemDestaque %>"></a>
