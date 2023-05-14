@@ -1,4 +1,4 @@
-const products = require('../database/products.json')
+const { Produto } = require('../models')
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
 
@@ -25,15 +25,17 @@ const ProductController = {
     res.render('admin/criar')
   },
   // Create product
-  createEJS: (req, res) => {
-    let image = ''
-    let newProduct = {
-      id: Number(products[products.length - 1].id) + 1,
-      ...req.body,
-      image: image
+  createEJS: async (req, res) => {
+    try {      
+      let newProduct = {
+        ...req.body,
+      }
+
+      await Produto.create(newProduct) // cria o registro no banco de dados
+
+    } catch (error) {
+      res.status(400).json({ error })
     }
-    products.push(newProduct)
-    res.redirect('/')
   },
 
   updateFormEJS: (req, res) => {
