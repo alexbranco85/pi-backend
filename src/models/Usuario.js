@@ -31,5 +31,17 @@ module.exports = (sequelize, DataType) => {
         timestamps: false
     })
 
+    Usuario.associate = (modelsList) => {
+        Usuario.hasMany(modelsList.Pedido, {
+          foreignKey: 'id_usuario',
+          as: 'pedido'
+        })
+
+        Usuario.belongsTo(modelsList.Endereco, {
+            foreignKey: 'id_endereco',
+            as: 'endereco'
+        })
+
+      }
     return Usuario
 }
