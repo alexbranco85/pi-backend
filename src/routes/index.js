@@ -5,7 +5,6 @@ const mainController = require('../controllers/MainController')
 const productController = require('../controllers/ProductController')
 const quemSomosController = require('../controllers/QuemSomos.js')
 const categoryController = require('../controllers/CategoryController')
-const adminController = require('../controllers/AdminController')
 const minhaContaController = require('../controllers/MinhaContaController')
 const carrinhoController = require('../controllers/CarrinhoController')
 const listaController = require('../controllers/ListaController')
@@ -36,7 +35,7 @@ router.get('/listadedesejos', auth, listaController.index);
 // GET ALL
 router.get('/search', mainController.search)
 
-router.get('/categoria/:categoria', categoryController.showAll)
+router.get('/categoria/:categoria', categoryController.showProductByCategory)
 
 router.post('/filter', filterController.filter)
 
@@ -44,17 +43,16 @@ router.get('/produto/:sku', productController.showBySku)
 
 // ADMIN
 
-router.get('/admin', auth, adminController.showAll);
-router.get('/admin/editar/:id', auth, adminController.updateForm);
+router.get('/admin', auth, productController.adminList);
+router.get('/admin/editar/:id', auth, productController.updateForm);
 router.put('/product/:id', auth, productController.updateEJS)
-
 router.get('/admin/criar', auth, productController.createFormEJS)
 router.post('/product', auth, productController.createEJS)
-
 router.delete('/product/:id', auth, productController.deleteEJS)
+router.get('/todos', productController.all)
 
-router.get('/todos', categoryController.all)
-
+router.get('/admin/criar-categoria', auth, categoryController.form)
+router.post('/category', auth, categoryController.create)
 // # Auth
 // GET - EJS Login Form - View
 router.get('/user/login', userController.loginFormEJS)
@@ -65,9 +63,6 @@ router.post('/login', userController.loginEJS)
 // GET - EJS Create Form - View
 router.get('/cadastro', userController.createFormEJS)
 // POST - EJS Create
-router.post(
-    '/user',
-    userController.createEJS
-)
+router.post('/user', userController.createEJS)
 
 module.exports = router

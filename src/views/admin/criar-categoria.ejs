@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<!-- Include Head -->
+<%- include('../includes/head', { title: 'Incluir Categoria', imports: '<link rel="stylesheet" href="/css/admin.css">' }) %>
+
+	<body>
+		<!-- Header -->
+		<%- include('../includes/header') %>
+		<!-- /Header -->
+
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Formulário de Inclusão de Categoria</h2>
+					</div>
+				</div>
+				<div class="col-12">
+					<form action="/category" method="POST" enctype="application/x-www-form-urlencoded">
+						<div class="row product-detail">
+							<div class="col-12">
+								<label for="nome" class="form-label">Informe o nome da Categoria:</label>
+								<input type="text" id="nome" name="nome" placeholder="Informe o nome da Categoria" class="form-input">
+							</div>
+							<div class="col-12">
+								<button type="submit" class="buy-now-button">Salvar</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<!-- footer -->
+			<%- include('../includes/footer') %>
+			<!-- /footer -->
+	</body>
+
+</html>

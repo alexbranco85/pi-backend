@@ -1,15 +1,45 @@
 const products = require('../database/products.json')
 const cats = require('../database/categorias.json')
 
+const { Produto, Categoria } = require('../models')
+
 const CategoryController = {
-  showAll: (req, res) => {
+
+  showProductByCategory: async (req, res) => {
     const { categoria } = req.params
-    const catProducts = categoria != 4 ? products.filter(item => item.categoria == categoria) : products;
-    const catName = cats.find(item => item.id == categoria)
-    res.render('categoria', {catProducts, catName})
+    try {
+      const catProducts = await Produto.findAll({
+        where: {
+          id_produto_categoria: categoria
+        }
+      });
+
+      const catName = await Categoria.findOne({
+        where: {
+          id: categoria
+        }
+      })
+
+      res.render('categoria', {catProducts, catName})
+    } catch (error) {
+      res.status(400).json({ error })
+    }
   },
-  all: (req, res) => {
-    res.render('todos', {products})
+  form: async (req, res) => {
+    try {
+      let categorias = await Categoria.findAll()
+      res.render('admin/criar-categoria', { categorias })
+    } catch (error) {
+      res.status(400).json({ error })
+    }
+  },
+  create: async (req, res) => {
+      try {
+      await Categoria.create({...req.body})
+      res.redirect('/admin/')
+    } catch (error) {
+      res.status(400).json({ error })
+    }
   }
 }
 module.exports = CategoryController

@@ -1,22 +1,22 @@
-const products = require('../database/products.json')
+// const products = require('../database/products.json')
+const { Op } = require('sequelize')
+const { Produto } = require('../models')
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
 
 const filterController = {
-  filter: (req, res) => {
-    const { minPrice, maxPrice, marca, type, size } = req.body;
-    let filteredProducts = products.filter((product) => {
-      let isBrandMatch = marca ? product.marca === marca : true;
-      // let isTypeMatch = type ? product.type === type : true;
-      // let isSizeMatch = size ? product.sizes.includes(size) : true;
-      // let isPriceMatch =
-      //   minPrice && maxPrice
-      //     ? product.price >= minPrice && product.price <= maxPrice
-      //     : true;
-      return isBrandMatch
-      // && isTypeMatch && isSizeMatch && isPriceMatch;
-    });
-    res.render('todos', { products: filteredProducts });
+  filter: async (req, res) => {
+    const { marca } = req.body;
+    try {
+      let filteredProducts = await Produto.findAll({  
+        where: {
+          marca: { [Op.substring]: marca }
+        }
+      })
+      res.render('todos', { products: filteredProducts });
+    } catch (error) {
+      res.status(400).json({ error })
+    }
   },
 }
 module.exports = filterController

@@ -15,6 +15,10 @@
 					</div>
 				</div>
 				<div class="col-12">
+					<% if(error){ %>
+						<h2 style="color: red">Erro: <%= error %></h2>
+					<% } %>
+
 					<form action="/product" method="POST" enctype="application/x-www-form-urlencoded">
 						<div class="row product-detail">
 							<div class="col-12">
@@ -41,10 +45,9 @@
 								<label for="id_produto_categoria" class="form-label">Categoria:</label>
 								
 								<select name="id_produto_categoria" id="id_produto_categoria">
-									<option value="1">Para Eles</option>
-									<option value="2">Para Elas</option>
-									<option value="3">Esportes</option>
-									<option value="5">Lançamentos</option>
+									<% categorias.forEach((cat) => { %>
+										<option value=<%= cat.id %>><%= cat.nome %></option>
+									<% }) %>
 								</select>
 								
 							</div>

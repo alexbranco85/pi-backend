@@ -1,5 +1,5 @@
 //const products = require('../database/products.json')
-
+const { Op } = require('sequelize')
 const { Produto } = require('../models')
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
@@ -16,14 +16,32 @@ const MainController = {
       res.status(400).json({ error })
     } 
   },
-  search: (req, res) => {
+  search: async (req, res) => {
     let search = req.query.keywords
-    let productsToSearch = products.filter(product => product.nome.toLowerCase().includes(search))
-    res.render('results', {
-      products: productsToSearch,
-      search,
-      toThousand,
-    })
+
+    try {
+      const productsToSearch = await Produto.findAll({
+        where: {
+          nome: {
+            [Op.substring]: search
+          }
+        }
+      })
+      res.render('results', {
+        products: productsToSearch,
+        search,
+        toThousand,
+      })
+    } catch (error) {
+      res.status(400).json({ error })
+    }
+
+    // let productsToSearch = products.filter(product => product.nome.toLowerCase().includes(search))
+    // res.render('results', {
+    //   products: productsToSearch,
+    //   search,
+    //   toThousand,
+    // })
   }
 }
 

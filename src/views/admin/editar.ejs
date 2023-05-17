@@ -14,6 +14,9 @@
         </div>
       </div>
         <div class="col-12">
+			<% if(error){ %>
+				<h1><%= error %></h1>
+			<%}%>
           <form action="/product/<%= productToEdit.id %>?_method=PUT" method="post" enctype="application/x-www-form-urlencoded">
             <div class="row product-detail">
 							<div class="col-12 col-md-6">
@@ -44,10 +47,9 @@
 								<label for="categoria" class="form-label">Categoria:</label>
 								
 								<select name="categoria" id="categoria">
-									<option value="1" <%= productToEdit.categoria == "Para Eles" ? 'selected' : '' %>>Para Eles</option>
-									<option value="2" <%- productToEdit.categoria == "Para Elas" ? 'selected' : '' %>>Para Elas</option>
-									<option value="3" <%- productToEdit.categoria == "Esportes" ? 'selected' : '' %>>Esportes</option>
-									<option value="5" <%- productToEdit.categoria == "Lançamentos" ? 'selected' : '' %>>Lançamentos</option>
+									<% categorias.forEach((cat) => { %>
+										<option value=<%= cat.id %> <%= productToEdit.id_produto_categoria == cat.id && 'selected' %>><%= cat.nome %></option>
+									<% }) %>
 								</select>
 								
 							</div>
@@ -66,15 +68,15 @@
 							<div class="col-12">
 								<label for="destaque" class="form-label">Destaque:</label>
 								<select name="destaque" id="destaque">
-									<option value="true" <%= productToEdit.destaque == "true" ? 'selected' : '' %>>Sim</option>
-									<option value="false" <%- productToEdit.destaque == "false" ? 'selected' : '' %>>Não</option>
+									<option value="1" <%= productToEdit.destaque == "1" ? 'selected' : '' %>>Sim</option>
+									<option value="0" <%- productToEdit.destaque == "0" ? 'selected' : '' %>>Não</option>
 								</select>
 							</div>
 							<div class="col-12">
 								<label for="oferta" class="form-label">Oferta:</label>
 								<select name="oferta" id="oferta">
-									<option value="true" <%= productToEdit.oferta == "true" ? 'selected' : '' %>>Sim</option>
-									<option value="false" <%- productToEdit.oferta == "false" ? 'selected' : '' %>>Não</option>
+									<option value="1" <%= productToEdit.oferta == 1 ? 'selected' : '' %>>Sim</option>
+									<option value="0" <%- productToEdit.oferta == 0 ? 'selected' : '' %>>Não</option>
 								</select>
 								<!-- <input name="oferta" id="oferta" class="form-input" value="<%= productToEdit.oferta %>"></input> -->
 							</div>
