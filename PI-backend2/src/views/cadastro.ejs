@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<!-- Include Head -->
+<%- include('includes/head', {title: 'Sneakers House - Cadastro' ,
+    imports: '<link rel="stylesheet" href="/css/login.css">' }) %>
+
+    <body>
+        <!-- Header -->
+        <%- include('includes/header') %>
+            <!--/Header -->
+            <main class="m-4">
+                <form action="/user" method="POST">
+                    <div class="flex-2">
+                        <section class="container">
+                            <div class="cadastro">
+                                <h2>INFORMAÇÕES PESSOAIS</h2>
+
+                                <div id="input-cadastro">
+                                    <% if (typeof errors !=='undefined' ) { %>
+                                        <ul>
+                                            <% for(let error in errors) { %>
+                                                <li>
+                                                    <%= errors[error].msg %>
+                                                </li>
+                                                <% } %>
+                                        </ul>
+                                        <% } %>
+
+                                            <label for="nome">Nome Completo</label>
+                                            <input type="text" name="nome">
+                                            <label for="email">Endereço de E-mail</label>
+                                            <input type="text" name="email">
+
+
+                                            <div class="flex">
+                                                <div class="coluna50">
+                                                    <label for="pwd">Senha</label>
+                                                    <input type="password" name="pwd" id="pwd">
+                                                </div>
+                                                <div class="coluna50">
+                                                    <label for="pwdConfirm">Confirmar Senha</label>
+                                                    <input type="password" id="pwdConfirm">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="flex">
+                                                <div class="coluna50">
+                                                    <label for="cpf">CPF</label>
+                                                    <input type="number" name="cpf">
+                                                </div>
+                                                <div class="coluna50">
+                                                    <label for="rg" name="rg">RG</label>
+                                                    <input type="number">
+                                                </div>
+                                            </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="container">
+                            <div class="cadastro">
+                                <h2>ENDEREÇO</h2>
+                                <div id="input-cadastro">
+                                    <div>
+                                        <label for="cep">CEP</label>
+                                        <input id="cep" type="number" name="cep">
+                                    </div>
+                                    <div class="flex">
+                                        <div class="coluna70">
+                                            <label for="endereco">Logradouro</label>
+                                            <input type="text" name="endereco" id="logradouro">
+                                        </div>
+                                        <div class="coluna25">
+                                            <label for="numero">Número</label>
+                                            <input type="number" name="numero">
+                                        </div>
+                                    </div>
+                                    <div class="coluna25">
+
+                                    </div>
+                                    <div class="flex">
+                                        <div class="coluna35">
+                                            <label for="bairro">Bairro</label>
+                                            <input type="text" id="bairro" name="bairro">
+                                        </div>
+                                        <div class="coluna35">
+                                            <label for="cidade">Cidade</label>
+                                            <input id="cidade" type="text" name="cidade">
+                                        </div>
+                                        <div class="coluna25">
+                                            <label for="estado">Estado</label>
+                                            <select name="estado" id="estado"></select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                </form>
+                <div class="button-cadastro">
+                    <button class="botao-vermelho" type="submit">Entrar</button>
+                </div>
+
+                </div>
+                </section>
+                </form>
+                </div>
+                <div class="msg-criarConta">
+                    <h3><strong>Já tem uma conta? </strong><a href="http://localhost:3000/login">Clique aqui para
+                            entrar.</a></h3>
+                </div>
+            </main>
+            <!-- footer -->
+            <%- include('includes/footer') %>
+                <!-- /footer -->
+                <script src="/js/cadastro.js"></script>
+    </body>
+
+</html>

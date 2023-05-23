@@ -1,0 +1,16 @@
+{
+    "id": "15",
+    "sku": "LLL8764783",
+    "marca": "Adidas",
+    "nome": "Adidas NMD_R1",
+    "imagemDestaque": "nmd_adidas.png",
+    "imagens": "nmd_adidas_02.png",
+    "categoria": "4",
+    "cores": ["rosa"],
+    "valor": "899,00",
+    "desconto": "799.00",
+    "descricao": "Com este tênis Adidas NMD_R1, você tem um outro tipo de conforto, além de um visual que pode ser combinado com qualquer look.",
+    "tamanho": 40,
+    "destaque": "false",
+    "oferta": "false"
+}

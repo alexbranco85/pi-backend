@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+    <!-- Include Head -->
+    <%- include('includes/head', {title: 'Sneakers house - Quem somos'}) %>
+
+<body>
+     <!-- Header -->
+    <%- include('includes/header') %>
+ <!-- /Header -->
+
+ <!-- main quemSomos-->
+    <main>
+        <section class="quem-somos">
+            <div class="slide slide_01">  
+                <div class="container">
+                    <p class="titulo">NÓS SOMOS A SNEAKERS HOUSE</p>
+                    <p class="subtitulo">Somos ousados, corajosos, apaixonados por estilo e conforto.</p>
+                </div>
+            </div>
+        </section>
+        <section class="container sobreaempresa">
+            <h2>Desde 2023</h2>
+            <div class="divisor-preto"></div>
+            <p>A Sneakers House nasceu em 2023, da vontade de 6 alunos de programação de revolucionar o mercado de calçados.<br> A Sneakers House é mais que uma loja, é um conceito. <br>Somos apaixonados por conforto e por estilo e temos certeza que o tênis pode estar presente em todas as ocasiões. Ousamos incluir os sneakers em todos os momentos do dia e da vida, desde a caminhada, o futebol do fim de semana ou profissional, até aquela festa mais arrumadinha.            
+        </section>
+        <section class="segundaapres">
+                <div class="container slide">
+                    <p class="titulo">ESTAMOS SEMPRE<br> EM <span class="movimento">MOVIMENTO</span></p>
+                    <p class="subtitulo">Do esporte ao dia a dia.</p>
+                </div>
+            
+        </section>
+        
+
+        <section class="aprenumeros">
+            <div class="container">
+                <h2>MAIS DE</h2>
+                <div class="numeros">
+                    <div><h2>20</h2> tipos de <h3>CHUTEIRAS</h3></div>
+                    <div><h2>33</h2> tênis de <h3>CANO ALTO</h3></div>
+                    <div><h2>35</h2> tênis de <h3>CORRIDA</h3></div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="contato-infos">
+                <div class="container">
+                    <h2>Contatos</h2>
+                    <div class="divisor-preto"></div>
+                    <div class="cidades">
+                        <div>
+                        <h3>Rio de Janeiro</h3>
+                        <p>Praia de Botafogo, 2000<br>
+                            sneakershouserio@sh.com.br</p>
+                        </div>
+                        <div>
+                            <h3>São Paulo</h3>
+                        <p>Avenida Paulista, 2000<br>
+                            sneakershousesp@sh.com.br</p>
+                        </div>
+                    </div>
+                </div>
+
+        </section>
+    </main>
+    <!-- /main quemSomos-->
+    <!-- footer -->
+    <%- include('includes/footer') %>
+    <!--/footer-->
+    
+    
+    <div id="modal-login" class="modal-container">
+        <div class="modal">
+            <div class="login">
+                <button class="b-fechar">X</button>
+                <h2>LOGIN</h2>
+                <div id="input-login">
+                    <label for="email">Digite seu e-mail</label>
+                    <input type="email">
+                    <label for="password">Digite sua senha</label>
+                    <input type="password">
+                </div>
+                <div class="button-login">
+                    <button class="botao-vermelho">Entrar</button>
+                    <a href="" class="esqueci-senha">Esqueci minha senha</a>
+                </div>
+                <div class="redesocial-login">
+                    <img src="./img/redeSocial/facebook.png" alt="">
+                    <span>Entrar com o Facebook</span>
+                    <img src="./img/redeSocial/google.png" alt="">
+                    <span>Entrar com o Google</span>
+                </div>
+            </div>
+            <div class="msg-criarConta">
+                <h3><strong>Ainda não tem uma conta? </strong><a class="criar-conta">Clique aqui para criar.</a></h3>
+            </div>
+        </div>
+    </div>
+        <div id="modal-cadastro" class="modal-container">
+            <div class="modal-cadastro">
+                <button class="b-fechar">X</button>
+                <div class="flex-2">
+                    <section class="container">
+                        <div class="cadastro">
+                            <h2 class="h2-cadastro">INFORMAÇÕES PESSOAIS</h2>
+                            <div id="input-cadastro">
+                                <label for="nome">Nome Completo</label>
+                                <input type="text" name="nome">
+                                <label for="email">Endereço de E-mail</label>
+                                <input type="email">
+                                <label for="cpf">CPF</label>
+                                <input type="number">
+                                <label for="rg">RG</label>
+                                <input type="number">
+                                <label for="data-nascimento">Data de Nascimento</label>
+                                <input type="date">
+                            </div>
+                        </div>
+                    </section>
+                    <section class="container">
+                        <div class="cadastro">
+                            <h2 class="h2-cadastro m-botton">ENDEREÇO</h2>
+                            <div id="input-cadastro">
+                                <div class="label-line">
+                                    <label for="endereco">Logradouro</label>
+                                    <label for="numero">Número</label>
+                                </div>
+                                <div class="input-line">
+                                    <input type="text" name="endereco" class="in-1">
+                                    <input type="number" name="numero" class="in-2">
+                                </div>
+                                <label for="bairro">Bairro</label>
+                                <input type="text">
+                                <div class="label-line">
+                                    <label for="cidade">Cidade</label>
+                                    <label for="estado">Estado</label>
+                                </div>
+                                <div class="input-line">
+                                    <input type="text" name="cidade" class="in-1">
+                                    <input type="estado" name="estado" class="in-2">
+                                </div>
+                                <label for="cep">CEP</label>
+                                <input type="number"> 
+                            </div>
+                            <div class="button-cadastro">
+                                <button class="botao-vermelho">Entrar</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="msg-criarConta">
+                    <h3><strong>Já tem uma conta? </strong><a class="entrar-login">Clique aqui para entrar.</a></h3>
+                </div>
+            </div>
+        </div>
+    <script type="module" src="app/loginCadastro.js"></script>
+</body>
+</html>

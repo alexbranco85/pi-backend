@@ -1,0 +1,57 @@
+
+<header>
+    <div class="container">
+        <a href="/"><img class="logotipo" src="/images/logotipo.png" /></a>
+        <nav class="menu-principal">
+            <ul>
+                <li><a href="/categoria/4">Lançamentos</a></li>
+                <li><a href="/categoria/2">Para Elas</a></li>
+                <li><a href="/categoria/1">Para Eles</a></li>
+                <li><a href="/categoria/3">Esportes</a></li>
+                <li><a href="/todos">Todos</a></li>
+            </ul>
+        </nav>
+        <div class="menu-mobile">
+            <div class="icone-menu" id="iconeMenu"><a href="javascript:void(0);" onclick="menuMobile()"><span
+                        class="material-symbols-outlined">menu</span></a></div>
+            <ul class="menuitems" id="menuitems">
+                <li class="fecharmenu"><a href="javascript:void(0);" onclick="menuMobile()">X</a></li>
+                <li><a href="/categoria/4">Lançamentos</a></li>
+                <li><a href="/categoria/2">Para Elas</a></li>
+                <li><a href="/categoria/1">Para Eles</a></li>
+                <li><a href="/categoria/3">Esportes</a></li>
+                <li><a href="/todos">Todos</a></li>
+            </ul>
+        </div>
+        
+        <div clas="col-7 col-md-6">
+            <form action="/search" method="get" class="search-form">
+                <input type="text" name="keywords" class="header-search" placeholder="Buscar">
+            </form>    
+        </div>
+        
+        <a href="/listadedesejos"><span class="material-symbols-outlined header-icon">favorite</span></a>
+        <a href="/login"> <span class="material-symbols-sharp header-icon">person</span></a>
+        <div class="addNumberCar">
+            <a href="/carrinho"><span class="material-symbols-sharp header-icon">shopping_cart</span></a>
+        </div>
+       
+    </div>
+    
+    <% if(locals.title){ %>
+        <div class="menu-navbar">
+            <ul class="container">
+                <li>
+                    <a href="/">Início</a>
+                </li>
+                <span> > </span>
+                <li class="link-pagina-atual">
+                    <a href="">
+                        <%= title %>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <%}%>
+    
+</header>

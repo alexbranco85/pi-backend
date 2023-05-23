@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<!-- Include Head -->
+<%- include('../includes/head', { title: 'Início' }) %>
+
+    <body>
+        <!-- Header -->
+        <%- include('../includes/header') %>
+
+            <main>
+                <div class="container" style="padding: 50px">
+                    <a href="/admin/criar" class="action-button edit"><button>Criar Produto</button></a>
+                    <a href="/admin/criar-categoria" class="action-button edit"><button>Criar Categoria</button></a>
+                     <% products.forEach(item => {%>
+                    <div class="produto" style="display: flex; padding: 10px 0; border-bottom: 1px solid #000;">
+                        <div class="sku" style="width: 15%; display: flex; align-items: center;"><%= item.sku %></div>
+                        <div class="nome" style="width: 30%; display: flex; align-items: center;"><%= item.nome %></div>
+                        <div class="excluir" style="width: 130px; display: flex; align-items: center;">
+
+
+                            <form action="/product/<%= item.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                                <button type="submit" class="action-button delete">Excluir</button>
+                              </form>
+
+                            
+
+                            
+                            </div>
+                        <div class="editar" style="width: 130px; display: flex; align-items: center;"><a href="/admin/editar/<%= item.id %>" class="action-button edit"><button>Editar</button></a></div>
+                    </div>
+                      <% }); %>                  
+                </div>
+            </main>
+
+
+            <%- include('../includes/footer') %>
+    </body>
+
+</html>

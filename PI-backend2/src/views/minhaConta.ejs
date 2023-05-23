@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+    
+    <!-- Include Head -->
+<%- include('includes/head', {title: 'Sneakers house' }) %>
+
+<body>
+    <!-- Header -->
+    <%- include('includes/header') %>
+    <!--/Header -->
+    
+    <!-- main minhaConta -->
+    <main class="m-4">
+        <section class="container">
+            <div class="detalhes">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Detalhes da conta</h1>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="nomeEmail">
+                        <div class="input-box">
+                            <label for="fullname">Nome completo</label>
+                            <input id="fullname" type="text" name="fullname" placeholder="Digite seu nome completo"
+                                required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="email">Endereço de E-mail</label>
+                            <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                        </div>
+                    </div>
+                    <div class="cpfRg">
+                        <div class="input-box">
+                            <label for="cpf">CPF</label>
+                            <input id="cpf" type="text" name="cpf" placeholder="Digite seu CPF" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="rg">RG</label>
+                            <input id="rg" type="text" name="rg" placeholder="Digite seu RG" required>
+                        </div>
+                    </div>
+                    <div class="data">
+                        <div class="input-box">
+                            <label for="Date">Data de nascimento</label>
+                            <input id="Date" type="date" name="date" placeholder="Digite sua data de nascimento"
+                                required>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="button-infoConta">
+                    <button class="botao-vermelho">Editar dados</button>
+                </div>
+
+
+            </div>
+            </div>
+        </section>
+
+    </main>
+     <!-- /main minhaConta-->
+
+     
+     
+     <!-- footer -->
+     <%- include('includes/footer') %>
+    
+     <!--/footer-->
+    
+     
+</body>
+
+</html>

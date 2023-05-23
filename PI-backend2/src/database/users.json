@@ -1,0 +1,29 @@
+[
+      {
+        "id": 1,
+        "nome": "Alex",
+        "email": "alex@alex.com",
+        "pwd": "$2b$10$/oWFxVvSFaxvA8RniQNiK.K/IIf3yAjCtHr7s2fVvVppvFLAW3Pi6",
+        "cpf": "999999999999999",
+        "cep": "13023020",
+        "endereco": "Rua Coelho Neto",
+        "numero": "76",
+        "bairro": "Vila Itapura",
+        "cidade": "Campinas",
+        "estado": "SP"
+      },
+
+      {
+        "id": 2,
+        "nome": "Lillian",
+        "email": "lillian@lillian.com",
+        "pwd": "H3ll0Sn3@kerS-H0us3",
+        "cpf": "12212212212",
+        "cep": "20720030",
+        "endereco": "Rua Sousa Aguiar",
+        "numero": "140",
+        "bairro": "Méier",
+        "cidade": "Rio de Janeiro",
+        "estado": "RJ"
+      }
+]

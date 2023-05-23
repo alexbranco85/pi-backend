@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<!-- Include Head -->
+<%- include('../includes/head', { title: 'Incluir Produto', imports: '<link rel="stylesheet" href="/css/admin.css">' }) %>
+
+	<body>
+		<!-- Header -->
+		<%- include('../includes/header') %>
+		<!-- /Header -->
+
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Formulário de Inclusão de Produto</h2>
+					</div>
+				</div>
+				<div class="col-12">
+					<% if(error){ %>
+						<h2 style="color: red">Erro: <%= error %></h2>
+					<% } %>
+
+					<form action="/product" method="POST" enctype="application/x-www-form-urlencoded">
+						<div class="row product-detail">
+							<div class="col-12">
+								<label for="name" class="form-label">Sku:</label>
+								<input type="text" id="sku" name="sku" placeholder="Informe o sku do produto" class="form-input">
+							</div>
+							<div class="col-12">
+								<label for="name" class="form-label">Marca:</label>
+								<input type="text" id="marca" name="marca" placeholder="Informe a marca do produto" class="form-input">
+							</div>
+							<div class="col-12">
+								<label for="name" class="form-label">Nome:</label>
+								<input type="text" id="nome" name="nome" placeholder="Informe o nome do produto" class="form-input">
+							</div>
+							<div class="col-12">
+								<label for="imagemDestaque" class="form-label">Imagem destaque:</label>
+								<input type="text" id="imagemDestaque" name="imagemDestaque" placeholder="Informe o nome do produto" class="form-input">
+							</div>
+							<div class="col-12">
+								<label for="imagens" class="form-label">Imagens:</label>
+								<input type="text" id="imagens" name="imagens" placeholder="Informe o nome do produto" class="form-input">
+							</div>
+							<div class="col-12 col-md-6">
+								<label for="id_produto_categoria" class="form-label">Categoria:</label>
+								
+								<select name="id_produto_categoria" id="id_produto_categoria">
+									<% categorias.forEach((cat) => { %>
+										<option value=<%= cat.id %>><%= cat.nome %></option>
+									<% }) %>
+								</select>
+								
+							</div>
+							</div>
+							<div class="col-12">
+								<label for="cores" class="form-label">Cores:</label>
+								<input type="text" id="cores" name="cores" placeholder="Informe as cores do produto" class="form-input">
+							</div>
+	
+						
+							<div class="col-12">
+								<label for="valor" class="form-label">Valor:</label>
+								<input type="text" id="valor" name="valor" placeholder="Informe o preço do produto" class="form-input">
+							</div>
+							<div class="col-12">
+								<label for="desconto" class="form-label">Valor com Desconto:</label>
+								<input type="text" id="desconto" name="desconto" placeholder="Informe o desconto do produto" class="form-input">
+							</div>
+							
+							<div class="col-12">
+								<label for="tamanhos" class="form-label">Tamanhos:</label>
+								<textarea name="tamanhos" id="tamanhos" class="form-input"></textarea>
+							</div>
+							<div class="col-12">
+								<label for="destaque" class="form-label">Destaque:</label>
+								<select name="destaque" id="destaque">
+									<option value="1">Sim</option>
+									<option value="0">Não</option>
+								</select>
+							</div>
+							<div class="col-12">
+								<label for="oferta" class="form-label">Oferta:</label>
+								<select name="oferta" id="oferta">
+									<option value="1">Sim</option>
+									<option value="0">Não</option>
+								</select>
+							</div>
+							<div class="col-12">
+								<label for="descricao" class="form-label">Descrição:</label>
+								<textarea name="descricao" id="descricao" class="form-input"></textarea>
+							</div>
+							<div class="col-12">
+								<button type="submit" class="buy-now-button">Salvar</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<!-- footer -->
+			<%- include('../includes/footer') %>
+			<!-- /footer -->
+	</body>
+
+</html>
