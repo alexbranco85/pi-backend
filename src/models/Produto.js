@@ -31,7 +31,7 @@ Produto.associate = (modelsList) => {
       foreignKey: 'id_produto_categoria',
       as: 'produtoCategoria'
     })
-    Product.belongsToMany(modelsList.Pedido, {
+    Produto.belongsToMany(modelsList.Pedido, {
       foreignKey: 'id_pedido',
       as: 'pedido',
       through: modelsList.PedidoItem
