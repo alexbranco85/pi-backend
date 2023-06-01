@@ -53,9 +53,8 @@ router.get('/todos', productController.all)
 
 router.get('/admin/criar-categoria', auth, categoryController.form)
 router.post('/category', auth, categoryController.create)
+
 // # Auth
-// GET - EJS Login Form - View
-router.get('/user/login', userController.loginFormEJS)
 // POST - EJS Login
 router.post('/login', userController.loginEJS)
 

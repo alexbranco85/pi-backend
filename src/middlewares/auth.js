@@ -1,14 +1,14 @@
 const jwt = require('jsonwebtoken')
 
 const auth = (req, res, next) => {
-    if (req.cookies.token) {
+    console.log('req.headers: ', req.headers)
+    if (req.headers.authorization) {
         try {
-            jwt.verify(req.cookies.token, 'secretKey')
+            jwt.verify(req.headers.authorization, 'secretKey')
             next()
         } catch (error) {
-            res.render('login', { errors: [{ msg: error }] })
+            res.status(401).json({ error })
         }
-    } else res.render('login', { errors: [{ msg: "Usuário não autenticado!" }] })
+    }else res.stauts(401).json({ error: "usuário não autenticadfo"})
 }
-
 module.exports = auth

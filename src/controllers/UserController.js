@@ -9,10 +9,7 @@ const UserController = {
     res.render('login')
   },
 
-  // Create form user - View
-  createFormEJS: (req, res) => {
-    res.render('cadastro')
-  },
+
   // Create user
   createEJS: (req, res) => {
     const errors = validationResult(req)
@@ -39,20 +36,17 @@ const UserController = {
       res.redirect('/')
     } else res.render('cadastro', { errors: [{ msg: "Usuário já cadastrado!" }] })
   },
-  // Login form user - View
-  loginFormEJS: (req, res) => {
-    res.render('login')
-  },
+
   // Login
   loginEJS: (req, res) => {
     const user = users.find(user => user.email === req.body.email) // encontra o usuário através do e-mail - e retorna o objeto
 
     if (user && bcrypt.compareSync(req.body.pwd, user.pwd)) { // compara a senha recebida no body com a senha gravada no banco de dados
       const token = jwt.sign({ id: user.id, email: user.email }, 'secretKey') // gera o token do usuário com JWT
-      res.cookie('userName', user.nome, { maxAge: 2592000000 })
-      res.cookie('token', token, { maxAge: 2592000000 }) // expira em 30 dias
-      res.redirect('/')
-    } else res.render('login')
+
+      res.status(200).json( token ) // expira em 30 dias
+    
+    } else res.status(400).json({ error: "usuário ou senha incorretos"})
   }
 }
 module.exports = UserController
