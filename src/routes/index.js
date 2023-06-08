@@ -60,7 +60,7 @@ router.post('/login', userController.loginEJS)
 
 // # User
 // GET - EJS Create Form - View
-router.get('/cadastro', userController.createFormEJS)
+// router.get('/cadastro', userController.createFormEJS)
 // POST - EJS Create
 router.post('/user', userController.createEJS)
 

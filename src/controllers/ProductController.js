@@ -1,4 +1,4 @@
-const { Produto, Categoria } = require('../models')
+const { Product, Categoria } = require('../models')
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
 
@@ -6,7 +6,7 @@ const ProductController = {
 
   showAll: async (req, res) => {
     try {
-      const products = await Produto.findAll()
+      const products = await Product.findAll()
       res.json(products)
     } catch (error) {
       res.status(400).json({ error })
@@ -15,7 +15,7 @@ const ProductController = {
 
   all: async (req, res) => {
     try {
-      const products = await Produto.findAll()
+      const products = await Product.findAll()
       res.render('todos', { products })
     } catch (error) {
       res.status(400).json({ error })
@@ -24,7 +24,7 @@ const ProductController = {
 
   adminList: async (req, res) => {
     try {
-      const products = await Produto.findAll()
+      const products = await Product.findAll()
       res.render('admin/index', { products: products })
     } catch (error) {
       res.status(400).json({ error })
@@ -36,12 +36,12 @@ const ProductController = {
     const { sku } = req.params
 
     try {
-      const product = await Produto.findOne({
+      const product = await Product.findOne({
         where: {
           sku: sku
         },
       })
-      res.render('produto', {
+      res.render('Product', {
         product
       })
     } catch (error) {
@@ -54,7 +54,7 @@ const ProductController = {
 
     if (product)
       return res.json(product)
-    else return res.status(400).json({ error: 'Produto não encontrado.' })
+    else return res.status(400).json({ error: 'Product não encontrado.' })
   },
 
   createFormEJS: async (req, res) => {
@@ -69,7 +69,7 @@ const ProductController = {
 
   // Create product
   createEJS: async (req, res) => {
-    const skuCompare = await Produto.findOne({
+    const skuCompare = await Product.findOne({
       where: {
         sku: req.body.sku
       }
@@ -80,13 +80,13 @@ const ProductController = {
         let newProduct = {
           ...req.body
         }
-        await Produto.create(newProduct)
+        await Product.create(newProduct)
         res.redirect('/admin/')
       } catch (error) {
         res.status(400).json({ error })
       }
     } else {
-      let error = "O SKU do produto já existe."
+      let error = "O SKU do Product já existe."
       let categorias = await Categoria.findAll()
       res.render('admin/criar', { categorias, error })
     }
@@ -98,7 +98,7 @@ const ProductController = {
     const { id } = req.params
 
     try {
-      const product = await Produto.findOne({
+      const product = await Product.findOne({
         where: {
           id: id
         },
@@ -118,7 +118,7 @@ const ProductController = {
 
     // const productIndex = products.findIndex(product => product.sku == sku)
     try {
-      await Produto.destroy({
+      await Product.destroy({
         where: {
           id: id
         }
@@ -133,7 +133,7 @@ const ProductController = {
     let id = req.params.id
 
     try {
-      let productToEdit = await Produto.findByPk(id)
+      let productToEdit = await Product.findByPk(id)
       let categorias = await Categoria.findAll()
       let error;
       res.render('admin/editar', { productToEdit, categorias, error })
@@ -148,14 +148,14 @@ const ProductController = {
     console.log(id)
 
     try {
-      const productToEdit = await Produto.findByPk(id)
+      const productToEdit = await Product.findByPk(id)
       console.log(productToEdit)
       if (productToEdit != undefined) {
         let product = {
           ...req.body,
         }
 
-        await Produto.update(
+        await Product.update(
           product,
           {
             where: {
@@ -164,7 +164,7 @@ const ProductController = {
           }
         )
         res.redirect('/admin')
-      } else return res.status(400).json({ error: 'Produto não encontrado.' })
+      } else return res.status(400).json({ error: 'Product não encontrado.' })
 
     } catch (error) {
       res.status(400).json({ error })
