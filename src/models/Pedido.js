@@ -22,7 +22,7 @@ module.exports = (sequelize, DataType) => {
           foreignKey: 'id_usuario',
           as: 'usuario'
         })
-        Pedido.belongsToMany(modelsList.Produto, {
+        Pedido.belongsToMany(modelsList.Product, {
           foreignKey: 'id_produto',
           as: 'pedidoItem',
           through: modelsList.PedidoItem

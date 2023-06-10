@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataType) => {
-    const Product = sequelize.define('Produto', {
+    const Product = sequelize.define('Product', {
     id: {
         type: DataType.INTEGER,
         primaryKey: true,
@@ -37,7 +37,5 @@ Product.associate = (modelsList) => {
       through: modelsList.PedidoItem
     })
   }
-
 return Product
-
 }

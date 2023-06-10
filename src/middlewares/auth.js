@@ -9,6 +9,6 @@ const auth = (req, res, next) => {
         } catch (error) {
             res.status(401).json({ error })
         }
-    }else res.stauts(401).json({ error: "usuário não autenticadfo"})
+    }else res.status(401).json({ error: "usuário não autenticadfo"})
 }
 module.exports = auth

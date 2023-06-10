@@ -14,54 +14,58 @@ const userController = require('../controllers/UserController')
 const auth = require('../middlewares/auth')
 const filterController = require('../controllers/FilterController')
 
-router.get('/produtos/filter', (req, res) => {
-    res.send(req.query)
-})
+// # Products
+router.get('/all', mainController.showAll);
+router.get('/sale', mainController.sale);
+router.get('/featured', mainController.featured);
 
+// router.get('/produtos/filter', (req, res) => {
+//     res.send(req.query)
+// })
 
-// GET ALL
-router.get('/', mainController.index);
+// // GET ALL
+// router.get('/', mainController.home);
 
-router.get('/quemsomos', quemSomosController.index);
+// router.get('/quemsomos', quemSomosController.index);
 
-router.get('/minhaconta', auth, minhaContaController.index);
+// router.get('/minhaconta', auth, minhaContaController.index);
 
-router.get('/login', userController.loginEJS);
+// router.get('/login', userController.loginEJS);
 
-router.get('/carrinho', carrinhoController.index);
+// router.get('/carrinho', carrinhoController.index);
 
-router.get('/listadedesejos', auth, listaController.index);
+// router.get('/listadedesejos', auth, listaController.index);
 
-// GET ALL
-router.get('/search', mainController.search)
+// // GET ALL
+// router.get('/search', mainController.search)
 
-router.get('/categoria/:categoria', categoryController.showProductByCategory)
+// router.get('/categoria/:categoria', categoryController.showProductByCategory)
 
-router.post('/filter', filterController.filter)
+// router.post('/filter', filterController.filter)
 
-router.get('/produto/:sku', productController.showBySku)
+// router.get('/produto/:sku', productController.showBySku)
 
-// ADMIN
+// // ADMIN
 
-router.get('/admin', auth, productController.adminList);
-router.get('/admin/editar/:id', auth, productController.updateForm);
-router.put('/product/:id', auth, productController.updateEJS)
-router.get('/admin/criar', auth, productController.createFormEJS)
-router.post('/product', auth, productController.createEJS)
-router.delete('/product/:id', auth, productController.deleteEJS)
-router.get('/todos', productController.all)
+// router.get('/admin', auth, productController.adminList);
+// router.get('/admin/editar/:id', auth, productController.updateForm);
+// router.put('/product/:id', auth, productController.updateEJS)
+// router.get('/admin/criar', auth, productController.createFormEJS)
+// router.post('/product', auth, productController.createEJS)
+// router.delete('/product/:id', auth, productController.deleteEJS)
+// router.get('/todos', productController.all)
 
-router.get('/admin/criar-categoria', auth, categoryController.form)
-router.post('/category', auth, categoryController.create)
+// router.get('/admin/criar-categoria', auth, categoryController.form)
+// router.post('/category', auth, categoryController.create)
 
-// # Auth
-// POST - EJS Login
-router.post('/login', userController.loginEJS)
+// // # Auth
+// // POST - EJS Login
+// router.post('/login', userController.loginEJS)
 
-// # User
-// GET - EJS Create Form - View
-// router.get('/cadastro', userController.createFormEJS)
-// POST - EJS Create
-router.post('/user', userController.createEJS)
+// // # User
+// // GET - EJS Create Form - View
+// // router.get('/cadastro', userController.createFormEJS)
+// // POST - EJS Create
+// router.post('/user', userController.createEJS)
 
 module.exports = router
