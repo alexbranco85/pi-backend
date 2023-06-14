@@ -31,23 +31,21 @@ const ProductController = {
     }
   },
 
-
   showBySku: async (req, res) => {
     const { sku } = req.params
-
     try {
       const product = await Product.findOne({
         where: {
           sku: sku
-        },
-      })
-      res.render('Product', {
-        product
-      })
+        }
+      });
+      res.status(200).json( product )
     } catch (error) {
       res.status(400).json({ error })
     }
   },
+
+
   showById: (req, res) => {
     const { id } = req.params
     const product = products.find(product => String(product.id) === id)

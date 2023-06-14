@@ -6,6 +6,7 @@ module.exports = (sequelize, DataType) => {
         autoIncrement: true
     },
     nome: DataType.STRING(100),
+    codname: DataType.STRING(200),
 }, {
     timestamps: false,
     tableName: 'produto_categoria'

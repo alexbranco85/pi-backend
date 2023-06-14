@@ -3,8 +3,6 @@ const { Product } = require('../models')
 
 const MainController = {
   featured: async (req, res) => {
-    if (req.query.keywords)
-        search = req.query.keywords
     try {
       const featured = await Product.findAll({
         where: {
@@ -12,6 +10,22 @@ const MainController = {
         }
       })
       res.status(200).json(featured)
+    } catch (error) {
+      res.status(400).json({ error })
+    }
+  },
+  related: async (req, res) => {
+    const { categoria } = req.params;
+
+    try {
+      const related = await Product.findAll({
+        where: {
+          categoria: categoria
+        },
+        order: sequelize.random(), // Adiciona uma ordenação aleatória
+        limit: 4 // Limita o resultado a 4 registros
+      })
+      res.status(200).json(related)
     } catch (error) {
       res.status(400).json({ error })
     }
@@ -26,6 +40,14 @@ const MainController = {
         }
       })
       res.status(200).json(sale)
+    } catch (error) {
+      res.status(400).json({ error })
+    }
+  },
+  all: async (req, res) => {
+    try {
+      const products = await Product.findAll()
+      res.status(200).json({catProducts: products, catName: {nome: 'Todos'}})
     } catch (error) {
       res.status(400).json({ error })
     }
