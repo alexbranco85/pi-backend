@@ -1,4 +1,4 @@
-
+const Usuario = require("./Usuario")
 
 module.exports = (sequelize, DataType) => {
     const Endereco = sequelize.define('Endereco', {
@@ -48,12 +48,13 @@ module.exports = (sequelize, DataType) => {
         timestamps: false
     })
 
-        // Endereco.associate = (modelsList) => {
-        //     Pedido.belongsTo(modelsList.Endereco, {
-        //     foreignKey: 'id_usuario',
-        //     as: 'usuario'
-        //     })
-        // }
+    Endereco.associate = (modelsList) => {
+        Endereco.belongsTo(modelsList.Usuario, {
+            foreignKey: 'id_usuario',
+            as: 'usuario'
+        })
+    }
+    
 
     return Endereco
 }

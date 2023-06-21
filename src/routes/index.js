@@ -8,6 +8,7 @@ const productController = require('../controllers/ProductController')
 const auth = require('../middlewares/auth')
 const filterController = require('../controllers/FilterController')
 const CategoryController = require('../controllers/CategoryController')
+const userController = require('../controllers/UserController')
 
 
 // # Products
@@ -16,9 +17,20 @@ router.get('/sale', mainController.sale);
 router.get('/featured', mainController.featured);
 router.get('/related/:categoria', mainController.related);
 router.get('/produto/:sku', productController.showBySku)
+router.delete('/product/:id', productController.delete)
+router.post('/product', productController.create)
+router.put('/product/:id', productController.update)
 
 // # Category
 router.get('/categoria/:categoria', CategoryController.showProductByCategory);
+
+// # Usuário
+router.post('/login', userController.login)
+router.post('/user', userController.create)
+
+// # Endereço
+router.post('/saveaddress', userController.saveAddress)
+router.get('/addressbyuser/:id', userController.showAddressByUser)
 
 // router.get('/produtos/filter', (req, res) => {
 //     res.send(req.query)
@@ -52,8 +64,8 @@ router.get('/categoria/:categoria', CategoryController.showProductByCategory);
 // router.get('/admin/editar/:id', auth, productController.updateForm);
 // router.put('/product/:id', auth, productController.updateEJS)
 // router.get('/admin/criar', auth, productController.createFormEJS)
-router.post('/product', auth, productController.createEJS)
-// router.delete('/product/:id', auth, productController.deleteEJS)
+
+// 
 // router.get('/todos', productController.all)
 
 // router.get('/admin/criar-categoria', auth, categoryController.form)
@@ -61,7 +73,7 @@ router.post('/product', auth, productController.createEJS)
 
 // // # Auth
 // // POST - EJS Login
-// router.post('/login', userController.loginEJS)
+// 
 
 // // # User
 // // GET - EJS Create Form - View

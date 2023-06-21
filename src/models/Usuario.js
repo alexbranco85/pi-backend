@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataType) => {
     const Usuario = sequelize.define('Usuario', {
-        id_usuario: {
+        id: {
             type: DataType.INTEGER,
             primaryKey: true,
             autoIncrement: true
@@ -21,11 +21,14 @@ module.exports = (sequelize, DataType) => {
             type: DataType.STRING,
             allowNull: false
         },
-        rg: {
+        telefone: {
             type: DataType.STRING,
             allowNull: false
-        }
-
+        },
+        is_admin: {
+            type: DataType.STRING,
+            allowNull: false
+        },
     }, {
         tableName: 'usuario',
         timestamps: false
@@ -33,11 +36,11 @@ module.exports = (sequelize, DataType) => {
 
     Usuario.associate = (modelsList) => {
         Usuario.hasMany(modelsList.Pedido, {
-            foreignKey: 'id_usuario',
+            foreignKey: 'id',
             as: 'pedido'
         })
 
-        Usuario.belongsTo(modelsList.Endereco, {
+        Usuario.hasMany(modelsList.Endereco, {
             foreignKey: 'id_endereco',
             as: 'endereco'
         })

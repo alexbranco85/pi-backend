@@ -66,27 +66,25 @@ const ProductController = {
   },
 
   // Create product
-  createEJS: async (req, res) => {
+  create: async (req, res) => {
     const skuCompare = await Product.findOne({
       where: {
         sku: req.body.sku
       }
     })
-    console.log("skuCompare", skuCompare)
+
     if(!skuCompare){
       try {
         let newProduct = {
           ...req.body
         }
         await Product.create(newProduct)
-        res.redirect('/admin/')
+        res.status(200).json({msg: 'Produto criado com sucesso!'})
       } catch (error) {
         res.status(400).json({ error })
       }
     } else {
-      let error = "O SKU do Product já existe."
-      let categorias = await Categoria.findAll()
-      res.render('admin/criar', { categorias, error })
+      res.status(400).json({error: 'Produto com sku já existente!'})
     }
   },
 
@@ -111,17 +109,16 @@ const ProductController = {
     }
   },
 
-  deleteEJS: async (req, res) => {
+  delete: async (req, res) => {
     const { id } = req.params
 
-    // const productIndex = products.findIndex(product => product.sku == sku)
     try {
       await Product.destroy({
         where: {
           id: id
         }
       }) // remove o registro do banco de dados
-      res.redirect('/admin/')
+      res.status(200).json({msg: 'Produto excluído com sucesso'})
     } catch (error) {
       res.status(400).json({ error })
     }
@@ -140,14 +137,11 @@ const ProductController = {
     }
   },
 
-  updateEJS: async (req, res) => {
+  update: async (req, res) => {
     const { id } = req.params
-    console.log(req.params)
-    console.log(id)
 
     try {
       const productToEdit = await Product.findByPk(id)
-      console.log(productToEdit)
       if (productToEdit != undefined) {
         let product = {
           ...req.body,
@@ -161,7 +155,7 @@ const ProductController = {
             }
           }
         )
-        res.redirect('/admin')
+        res.status(200).json({ msg: 'Produto editado com sucesso.' })
       } else return res.status(400).json({ error: 'Product não encontrado.' })
 
     } catch (error) {
